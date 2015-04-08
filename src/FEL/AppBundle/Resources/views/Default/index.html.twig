@@ -1,15 +1,15 @@
 {% block body %}
 
-            {% for a in acteurs %}
-                {{ a.nom }}
-                {{ a.content }}
+    {% for a in acteurs %}
+        {{ a.nom }}
+        {{ a.content }}
 
 
 
 
 
-            {% else %}
-                <p>Aucune News n'a été trouvée</p>
-            {% endfor %}
+    {% else %}
+        <p>Aucune News n'a été trouvée</p>
+    {% endfor %}
 
 {% endblock %}
