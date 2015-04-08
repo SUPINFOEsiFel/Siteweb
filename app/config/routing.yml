@@ -1,0 +1,7 @@
+fel_app:
+    resource: "@FELAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
