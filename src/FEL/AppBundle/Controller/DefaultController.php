@@ -6,8 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('FELAppBundle:Default:index.html.twig', array('name' => $name));
+        $em = $this->container->get('doctrine')->getEntityManager();
+
+        $acteurs = $em->getRepository('FELAppBundle:Article')->findall();
+
+
+        return $this->container->get('templating')->renderResponse('FELAppBundle:Default:index.html.twig',
+            array(
+                'acteurs' => $acteurs
+            ));
     }
 }
