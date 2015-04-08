@@ -1,4 +1,4 @@
-FEL
+Siteweb FEL
 ===
 
-A Symfony project created on April 1, 2015, 8:41 pm.
+Site web pour la Fédération des Étudiants Lyonnais.
