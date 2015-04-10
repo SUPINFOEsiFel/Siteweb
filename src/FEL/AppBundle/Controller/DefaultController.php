@@ -10,12 +10,12 @@ class DefaultController extends Controller
     {
         $em = $this->container->get('doctrine')->getEntityManager();
 
-        $acteurs = $em->getRepository('FELAppBundle:Article')->findall();
+        $news = $em->getRepository('FELAppBundle:Article')->findall();
 
 
         return $this->container->get('templating')->renderResponse('FELAppBundle:Default:index.html.twig',
             array(
-                'acteurs' => $acteurs
+                'news' => $news
             ));
     }
 }
