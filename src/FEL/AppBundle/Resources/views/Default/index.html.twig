@@ -1,9 +1,11 @@
 {% block body %}
-
+<h1>News : </h1>
     {% for a in acteurs %}
-        {{ a.nom }}
-        {{ a.content }}
-
+        <section>
+            <h2>{{ a.nom }}</h2>
+            <p>{{ a.content }}</p>
+            <p>- from {{ a.auteur }}, {{ a.date|date("l, \\T\\h\\e jS F o \\a\\t g:i a. e") }}.</p>
+        </section>
 
 
 
