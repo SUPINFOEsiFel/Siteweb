@@ -20,9 +20,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->container->get('doctrine')->getEntityManager();
-
-        $news = $em->getRepository('FELAppBundle:Article')->findall();
+        $news = $this->getDoctrine()
+            ->getRepository('FELAppBundle:Article')
+            ->findall();
 
         return array('news' => $news);
     }
