@@ -1,3 +1,7 @@
 annot:
     resource: "@FELAppBundle/Controller"
     type:     annotation
+
+FEL_Article_Ajouter:
+    path: /ajouter/
+    defaults: { _controller: FELAppBundle:Default:ajouter }
