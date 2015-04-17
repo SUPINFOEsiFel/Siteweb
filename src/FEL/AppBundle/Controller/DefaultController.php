@@ -27,6 +27,7 @@ class DefaultController extends Controller
 
         return array('news' => $news);
     }
+
     public function ajouterAction()
     {
         $message='';

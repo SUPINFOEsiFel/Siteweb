@@ -18,3 +18,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # Meteor api url
+    meteor_host: 127.0.0.1
+    meteor_port: null
