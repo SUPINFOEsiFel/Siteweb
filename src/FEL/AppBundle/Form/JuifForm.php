@@ -1,8 +1,8 @@
 <?php
 namespace FEL\AppBundle\Form;
 
-use Symfony\component\Form\AbstractType;
-use Symfony\component\Form\FormBuilderInterface;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class JuifForm extends AbstractType
 {

@@ -6,6 +6,7 @@ use FEL\AppBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FEL\AppBundle\Form\JuifForm;
 
 /**
  * Class DefaultController
@@ -33,7 +34,7 @@ class DefaultController extends Controller
         $message='';
         $article= new Article();
 
-        $form = $this->container->get('form.factory')->ceate(new JuifForm(),$article);
+        $form = $this->container->get('form.factory')->create(new JuifForm(),$article);
 
         $request = $this->container->get('request');
 
@@ -42,14 +43,14 @@ class DefaultController extends Controller
             $form->handleRequest($request);
             if ($form->isValid())
             {
-                $em = $this->container->get('doctrine')->getEntitManager();
-                $em = persist($article);
-                $em = flush();
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $em->persist($article);
+                $em->flush();
                 $message = 'Article posté';
             }
         }
         return $this->container->get('templating')->renderResponse(
-            'EBOLA',
+            'FELAppBundle:Default:ajouter.html.twig',
             array(
                 'form'=> $form->createView(),
                 'message'=> $message,
