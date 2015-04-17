@@ -29,6 +29,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        meteor_host: "%meteor_host%"
+        meteor_port: "%meteor_port%"
 
 # Assetic Configuration
 assetic:
