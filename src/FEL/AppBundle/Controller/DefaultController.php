@@ -4,8 +4,10 @@ namespace FEL\AppBundle\Controller;
 
 use FEL\AppBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use FEL\AppBundle\Form\JuifForm;
 
 /**
@@ -29,33 +31,32 @@ class DefaultController extends Controller
         return array('news' => $news);
     }
 
-    public function ajouterAction()
+    /**
+     * @Route("/create", name="fel_app_create")
+     * @Method({"POST"})
+     * @Template()
+     * @return array
+     */
+    public function ajouterAction($requestStack)
     {
-        $message='';
-        $article= new Article();
+        $message = '';
+        $article = new Article();
 
         $form = $this->container->get('form.factory')->create(new JuifForm(),$article);
 
-        $request = $this->container->get('request');
-
-        if ($request->getMethod()=='POST')
+        $form->handleRequest($requestStack);
+        if ($form->isValid())
         {
-            $form->handleRequest($request);
-            if ($form->isValid())
-            {
-                $em = $this->container->get('doctrine')->getEntityManager();
-                $em->persist($article);
-                $em->flush();
-                $message = 'Article posté';
-            }
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($article);
+            $em->flush();
+            $message = 'Article posté';
         }
-        return $this->container->get('templating')->renderResponse(
-            'FELAppBundle:Default:ajouter.html.twig',
-            array(
+
+        return array(
                 'form'=> $form->createView(),
                 'message'=> $message,
-            )
-        );
+            );
     }
 
 }
