@@ -15,7 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class NewsController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="fel_app_news")
      * @Template()
      */
     public function indexAction()

@@ -24,11 +24,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $news = $this->getDoctrine()
-            ->getRepository('FELAppBundle:Article')
-            ->findall();
-
-        return array('news' => $news);
+        return array();
     }
 
     /**

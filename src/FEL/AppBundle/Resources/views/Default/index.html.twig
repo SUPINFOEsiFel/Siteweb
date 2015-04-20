@@ -1,23 +1,16 @@
 {% extends "FELAppBundle:Default:layout.html.twig" %}
 {% block body %}
     <div class="container">
-        <h1>News : </h1>
-        {% for n in news %}
-
-            <section>
-                <h2>{{ n.nom }}</h2>
-                <blockquote>
-                    <p>{{ n.content }}</p>
-                    <footer>
-                        <i class="glyphicon glyphicon-time"></i>
-                        <em>{{ n.date|date("l, \\t\\h\\e jS F o \\a\\t g:ia") }}</em>,
-                        from <strong>{{ n.auteur }}</strong>.
-                    </footer>
-                </blockquote>
-            </section>
-
-        {% else %}
-            <div class="alert alert-info" role="alert">Aucune News n'a été trouvée.</div>
-        {% endfor %}
+        <h1>Homepage : </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('fel_app_homepage') }}">page d'acceuil</a>
+                </li>
+                <li>
+                    <a href="{{ path('fel_app_news') }}">page d'actualités</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 {% endblock %}
