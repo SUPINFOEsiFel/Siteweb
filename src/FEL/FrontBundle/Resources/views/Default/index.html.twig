@@ -1,0 +1,16 @@
+{% extends "FELFrontBundle:Default:layout.html.twig" %}
+{% block body %}
+    <div class="container">
+        <h1>Homepage : </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('fel_front_homepage') }}">page d'acceuil</a>
+                </li>
+                <li>
+                    <a href="{{ path('fel_front_news') }}">page d'actualités</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}

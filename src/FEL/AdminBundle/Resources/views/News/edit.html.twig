@@ -1,0 +1,16 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+
+{% block body -%}
+    <h1>Article edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('fel_admin_news_homepage') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

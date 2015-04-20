@@ -1,3 +1,0 @@
-annot:
-    resource: "@FELAppBundle/Controller"
-    type:     annotation

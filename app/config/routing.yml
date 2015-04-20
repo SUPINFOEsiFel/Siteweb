@@ -1,2 +1,8 @@
-fel_app:
-    resource: "@FELAppBundle/Resources/config/routing.yml"
+fel_admin:
+    resource: "@FELAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+fel_front:
+    resource: "@FELFrontBundle/Controller/"
+    type:     annotation

@@ -1,0 +1,16 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+{% block body %}
+    <div class="container">
+        <h1>Admin Homepage : </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('fel_admin_homepage') }}">page d'acceuil</a>
+                </li>
+                <li>
+                    <a href="{{ path('fel_admin_news_homepage') }}">page de modification des news</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
