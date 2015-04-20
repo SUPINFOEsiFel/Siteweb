@@ -8,7 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FEL\AdminBundle\Entity\Article;
-use FEL\AdminBundle\Form\ArticleType;
+use FEL\AdminBundle\Form\NewArticleForm;
+use FEL\AdminBundle\Form\EditArticleForm;
 
 /**
  * Article controller.
@@ -71,7 +72,7 @@ class NewsController extends Controller
      */
     private function createCreateForm(Article $entity)
     {
-        $form = $this->createForm(new ArticleType(), $entity, array(
+        $form = $this->createForm(new NewArticleForm(), $entity, array(
             'action' => $this->generateUrl('fel_admin_news_create'),
             'method' => 'POST',
         ));
@@ -160,7 +161,7 @@ class NewsController extends Controller
     */
     private function createEditForm(Article $entity)
     {
-        $form = $this->createForm(new ArticleType(), $entity, array(
+        $form = $this->createForm(new EditArticleForm(), $entity, array(
             'action' => $this->generateUrl('fel_admin_news_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
