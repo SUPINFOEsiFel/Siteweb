@@ -36,6 +36,7 @@ class NewsController extends Controller
             'entities' => $entities,
         );
     }
+
     /**
      * Creates a new Article entity.
      *
@@ -59,7 +60,7 @@ class NewsController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -72,10 +73,14 @@ class NewsController extends Controller
      */
     private function createCreateForm(Article $entity)
     {
-        $form = $this->createForm(new NewArticleForm(), $entity, array(
-            'action' => $this->generateUrl('fel_admin_news_create'),
-            'method' => 'POST',
-        ));
+        $form = $this->createForm(
+            new NewArticleForm(),
+            $entity,
+            array(
+                'action' => $this->generateUrl('fel_admin_news_create'),
+                'method' => 'POST',
+            )
+        );
 
         $form->add('submit', 'submit', array('label' => 'Create'));
 
@@ -92,11 +97,11 @@ class NewsController extends Controller
     public function newAction()
     {
         $entity = new Article();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -120,7 +125,7 @@ class NewsController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -146,30 +151,35 @@ class NewsController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
-    * Creates a form to edit a Article entity.
-    *
-    * @param Article $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Article entity.
+     *
+     * @param Article $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Article $entity)
     {
-        $form = $this->createForm(new EditArticleForm(), $entity, array(
-            'action' => $this->generateUrl('fel_admin_news_update', array('id' => $entity->getId())),
-            'method' => 'PUT',
-        ));
+        $form = $this->createForm(
+            new EditArticleForm(),
+            $entity,
+            array(
+                'action' => $this->generateUrl('fel_admin_news_update', array('id' => $entity->getId())),
+                'method' => 'PUT',
+            )
+        );
 
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
+
     /**
      * Edits an existing Article entity.
      *
@@ -194,15 +204,16 @@ class NewsController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('fel_admin_news_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('fel_admin_news_show', array('id' => $id)));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Article entity.
      *
@@ -242,7 +253,6 @@ class NewsController extends Controller
             ->setAction($this->generateUrl('fel_admin_news_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
