@@ -1,4 +1,4 @@
-fel_admin:
+fel_admin_security:
     resource: "@FELAdminBundle/Controller/"
     type:     annotation
     prefix:   /admin
