@@ -1,8 +1,14 @@
 {% extends "FELAdminBundle:Default:layout.html.twig" %}
-{% block body %}
-    {% stylesheets '@FELAdminBundle/Resources/public/css/signin-form.css' %}
+
+{% block title %}Admin Authentication{% endblock %}
+
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/default-login.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
     <div class="jumbotron jumbotron-trianglify">
         <div class="container"><h1>Admin Authentication</h1></div>
     </div>
