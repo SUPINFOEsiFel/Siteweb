@@ -37,7 +37,7 @@
                             <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}"><span class="fa fa-pencil"></span></a>
                         </li>
                         <li>
-                            <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}"><span class="fa fa-times"></span></a>
+                            <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}"><span class="fa fa-times text-danger"></span></a>
                         </li>
                     </ul>
                     </td>
@@ -48,8 +48,8 @@
 
             <ul>
             <li>
-                <a href="{{ path('fel_admin_news_new') }}">
-                    Create a new entry
+                <a href="{{ path('fel_admin_news_new') }}" class="text-success">
+                    <span class="fa fa-plus"></span> Create a new entry
                 </a>
             </li>
         </ul>
