@@ -1,0 +1,57 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+
+{% block body -%}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/confirm.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+    <div class="jumbotron jumbotron-trianglify">
+        <div class="container"><h1>Modification des news</h1></div>
+    </div>
+    <section class="container">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h2 class="panel-title">Confirmation de suppression</h2>
+            </div>
+            <div class="panel-body">
+                <p>Vous êtes sur le point de <strong>supprimer</strong> cette article&nbsp;:</p>
+                <table class="table record_properties">
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ entity.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Title</th>
+                        <td>{{ entity.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Content</th>
+                        <td>{{ entity.content }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+                    </tr>
+                    <tr>
+                        <th>Author</th>
+                        <td>{{ entity.author }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <ul class="record_actions">
+                    <li>
+                        <strong>Voulez-vous continuer ?</strong>
+                    </li>
+                    <li>
+                        <a class="btn btn-default" href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}" role="button">Annuler</a>
+                    </li>
+                    <li>
+                        {{ form(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

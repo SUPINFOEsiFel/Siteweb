@@ -43,7 +43,11 @@
                     Edit
                 </a>
             </li>
-            <li>{{ form(delete_form) }}</li>
+            <li>
+                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}">
+                    Delete
+                </a>
+            </li>
         </ul>
     </section>
 {% endblock %}

@@ -43,6 +43,8 @@ class NewsController extends Controller
      * @Route("/")
      * @Method("POST")
      * @Template("FELAdminBundle:News:new.html.twig")
+     * @param Request $request
+     * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function createAction(Request $request)
     {
@@ -111,6 +113,8 @@ class NewsController extends Controller
      * @Route("/{id}")
      * @Method("GET")
      * @Template()
+     * @param $id
+     * @return array
      */
     public function showAction($id)
     {
@@ -122,11 +126,8 @@ class NewsController extends Controller
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
-
         return array(
             'entity' => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -136,6 +137,8 @@ class NewsController extends Controller
      * @Route("/{id}/edit")
      * @Method("GET")
      * @Template()
+     * @param $id
+     * @return array
      */
     public function editAction($id)
     {
@@ -148,12 +151,10 @@ class NewsController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         return array(
             'entity' => $entity,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -186,6 +187,9 @@ class NewsController extends Controller
      * @Route("/{id}")
      * @Method("PUT")
      * @Template("FELAdminBundle:News:edit.html.twig")
+     * @param Request $request
+     * @param $id
+     * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function updateAction(Request $request, $id)
     {
@@ -197,7 +201,6 @@ class NewsController extends Controller
             throw $this->createNotFoundException('Unable to find Article entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
@@ -210,6 +213,31 @@ class NewsController extends Controller
         return array(
             'entity' => $entity,
             'edit_form' => $editForm->createView(),
+        );
+    }
+
+    /**
+     * Confirm deletes a Article entity.
+     *
+     * @Route("/{id}/delete")
+     * @Method("GET")
+     * @Template()
+     * @param $id
+     * @return array
+     */
+    public function confirmAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('FELAdminBundle:Article')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Article entity.');
+        }
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -219,6 +247,9 @@ class NewsController extends Controller
      *
      * @Route("/{id}")
      * @Method("DELETE")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function deleteAction(Request $request, $id)
     {
@@ -252,7 +283,7 @@ class NewsController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('fel_admin_news_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'btn btn-danger')))
             ->getForm();
     }
 }
