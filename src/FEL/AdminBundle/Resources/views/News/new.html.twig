@@ -2,6 +2,12 @@
 
 {% block title %}New Article - News Management{% endblock %}
 
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/news.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block body -%}
     <div class="jumbotron jumbotron-trianglify">
         <div class="container"><h1>Modification des news</h1></div>

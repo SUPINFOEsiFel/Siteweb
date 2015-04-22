@@ -2,6 +2,12 @@
 
 {% block title %}Show Article - News Management{% endblock %}
 
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/news.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block body -%}
     <div class="jumbotron jumbotron-trianglify">
         <div class="container"><h1>Modification des news</h1></div>
@@ -38,18 +44,13 @@
 
             <ul class="record_actions">
             <li>
-                <a href="{{ path('fel_admin_news_homepage') }}">
-                    Back to the list
+                <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}" class="btn btn-default">
+                    <span class="fa fa-pencil"></span> Edit
                 </a>
             </li>
             <li>
-                <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}">
-                    Edit
-                </a>
-            </li>
-            <li>
-                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}">
-                    Delete
+                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}" class="btn btn-danger">
+                    <span class="fa fa-times"></span> Delete
                 </a>
             </li>
         </ul>
