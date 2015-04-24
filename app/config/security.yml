@@ -8,9 +8,9 @@ security:
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
         ROLE_METEOR_ACCESS: ROLE_USER
-        ROLE_NEWS_ACCESS: ROLE_USER
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_NEWS_ACCESS:   ROLE_USER
+        ROLE_ADMIN:         [ROLE_USER, ROLE_NEWS_ACCESS, ROLE_METEOR_ACCESS]
+        ROLE_SUPER_ADMIN:   [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
@@ -33,7 +33,7 @@ security:
             pattern:  ^/
             anonymous: ~
             form_login:
-                check_path: fel_admin_check
+                #check_path: fel_admin_check
                 login_path: fel_admin_login
                 default_target_path: fel_admin_homepage
             logout:

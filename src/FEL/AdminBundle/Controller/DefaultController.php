@@ -2,6 +2,7 @@
 
 namespace FEL\AdminBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -24,7 +25,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $user = "lol";
+        /*$user = "lol";
         if (!$user) {
             throw new UsernameNotFoundException("User not found");
         } else {
@@ -35,7 +36,7 @@ class DefaultController extends Controller
             $request = $this->get("request");
             $event = new InteractiveLoginEvent($request, $token);
             $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
-        }
+        }*/
         return array();
     }
 
@@ -68,7 +69,23 @@ class DefaultController extends Controller
      */
     public function checkAction()
     {
-        return array();
+        $user = "dev";
+        //TODO: REST meteor
+
+        if (!$user) {
+            throw new UsernameNotFoundException("User not found");
+        } else {
+            $token = new UsernamePasswordToken($user, null, "main", array("ROLE_METEOR_ACCESS"/*, "ROLE_NEWS_ACCESS"*/));
+            //TODO: LIST ROLES
+
+            $this->get("security.token_storage")->setToken($token);
+
+            $request = $this->get("request");
+            $event = new InteractiveLoginEvent($request, $token);
+            $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
+        }
+
+        return $this->redirect($this->generateUrl('fel_admin_homepage'));
     }
 
     /**

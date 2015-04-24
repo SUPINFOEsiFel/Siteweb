@@ -8,6 +8,7 @@
         <service id="wsse.security.authentication.provider" class="FEL\AdminBundle\Security\Authentication\Provider\MeteorProvider">
             <argument>%parameter_name%%kernel.cache_dir%/security/nonces</argument>
         </service>
-    </services>-->
+    </services>
+    -->
 
 </container>

@@ -4,9 +4,13 @@
 
 {% block body %}
     <div class="jumbotron jumbotron-trianglify">
-        <div class="container"><h1>{% trans %}Admin Homepage{% endtrans %}</h1></div>
+        <div class="container"><h1>{% trans %}Admin Homepage{% endtrans %}</h1>
+        </div>
     </div>
     <div class="container">
+        <div class="page-header">
+            <h2>Bienvenue, {#{{ app.security.getToken().getUser().getUsername() }}#}</h2>
+        </div>
         <div class="row">
             {% if is_granted('ROLE_USER') %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
@@ -33,7 +37,7 @@
             {% if is_granted('ROLE_METEOR_ACCESS') %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <a href="#" class="thumbnail text-center">
-                        <span class="fa fa-newspaper-o fa-5x"></span>
+                        <span class="fa fa-star fa-5x"></span>
 
                         <div class="caption">
                             <h3>Événements</h3>
