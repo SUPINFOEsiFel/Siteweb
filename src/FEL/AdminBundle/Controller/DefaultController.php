@@ -6,7 +6,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 
 /**
  * Class DefaultController
@@ -21,6 +24,18 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+        $user = "lol";
+        if (!$user) {
+            throw new UsernameNotFoundException("User not found");
+        } else {
+            $token = new UsernamePasswordToken($user, null, "main", array("ROLE_METEOR_ACCESS", "ROLE_NEWS_ACCESS"));
+            $this->get("security.token_storage")->setToken($token); //now the user is logged in
+
+            //now dispatch the login event
+            $request = $this->get("request");
+            $event = new InteractiveLoginEvent($request, $token);
+            $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
+        }
         return array();
     }
 
