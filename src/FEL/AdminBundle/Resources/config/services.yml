@@ -1,8 +1,0 @@
-services:
-  meteor.security.authentication.provider:
-    class:  FEL\AdminBundle\Security\Authentication\Provider\MeteorProvider
-    arguments: ['', %kernel.cache_dir%/security/nonces]
-
-  meteor.security.authentication.listener:
-    class:  FEL\AdminBundle\Security\Firewall\MeteorListener
-    arguments: [@security.context, @security.authentication.manager]
