@@ -11,6 +11,7 @@ use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
+use FEL\AdminBundle\Security\User\MeteorUser;
 
 /**
  * Class DefaultController
@@ -48,6 +49,7 @@ class DefaultController extends Controller
      */
     public function loginAction(Request $request)
     {
+        //TODO: review authentication failure message
         $session = $request->getSession();
 
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
@@ -72,36 +74,36 @@ class DefaultController extends Controller
         $username = $request->request->get('_username');
         $password = $request->request->get('_password');
 
+        //TODO: cover exception as authentication failure
         $browser = new Buzz\Browser();
-        $url = "http".
-            (($this->container->getParameter('meteor_secure')) ? 's' : '').
-            "://".
-            $this->container->getParameter('meteor_host').
-            ":".
-            (($this->container->getParameter('meteor_port') == null) ? "3000" : $this->container->getParameter(
-                'meteor_port'
-            )).
-            "/api/";
+        $url = "http".(($this->container->getParameter(
+                'meteor_secure'
+            )) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
+                    'meteor_port'
+                ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
         $response = $browser->post($url.'login/', array(), '&user='.$username.'&password='.$password);
         $auth = json_decode($response->getContent(), true);
 
+        dump($auth);
+
         if ($auth["status"] == "success") {
-            $user = $username;
+            $roles = array("ROLE_METEOR_ACCESS");
+
+            //TODO: separate into a parameter
+            if (in_array($username, array("admin"))) {
+                $roles[] = "ROLE_NEWS_ACCESS";
+            }
+
+            $user = new MeteorUser($username, $password, null, $roles, $auth["data"]["userId"], $auth["data"]["authToken"]);
         } else {
+            $roles = array();
             $user = false;
         }
 
         if (!$user) {
             throw new UsernameNotFoundException("User not found");
         } else {
-            $roles = array("ROLE_METEOR_ACCESS");
-
-            if (in_array($username, array("admin"))) {
-                $roles[] = "ROLE_NEWS_ACCESS";
-            }
-
             $token = new UsernamePasswordToken($user, null, "main", $roles);
-            //TODO: LIST ROLES
 
             $this->get("security.token_storage")->setToken($token);
 
