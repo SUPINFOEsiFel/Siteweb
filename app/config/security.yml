@@ -19,7 +19,6 @@ security:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-                    root: { password: toor, roles: [ 'ROLE_SUPER_ADMIN' ] }
 
     # the main part of the security, where you can set up firewalls
     # for specific sections of your app
@@ -46,5 +45,5 @@ security:
     access_control:
         - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/news, roles: ROLE_NEWS_ACCESS }
-        - { path: ^/admin/events, roles: ROLE_METEOR_ACCESS }
+        #- { path: ^/admin/events, roles: ROLE_METEOR_ACCESS }
         - { path: ^/admin, roles: ROLE_USER }

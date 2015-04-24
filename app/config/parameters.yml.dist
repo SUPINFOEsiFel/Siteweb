@@ -20,5 +20,6 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     # Meteor api url
-    meteor_host: 127.0.0.1
-    meteor_port: null
+    meteor_host:   127.0.0.1
+    meteor_port:   null
+    meteor_secure: false

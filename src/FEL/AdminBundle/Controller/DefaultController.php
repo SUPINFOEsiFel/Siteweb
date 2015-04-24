@@ -2,15 +2,15 @@
 
 namespace FEL\AdminBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Buzz;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
-use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 
 /**
  * Class DefaultController
@@ -67,15 +67,40 @@ class DefaultController extends Controller
      * @Route("/login_check", name="fel_admin_check")
      * @Template()
      */
-    public function checkAction()
+    public function checkAction(Request $request)
     {
-        $user = "dev";
-        //TODO: REST meteor
+        $username = $request->request->get('_username');
+        $password = $request->request->get('_password');
+
+        $browser = new Buzz\Browser();
+        $url = "http".
+            (($this->container->getParameter('meteor_secure')) ? 's' : '').
+            "://".
+            $this->container->getParameter('meteor_host').
+            ":".
+            (($this->container->getParameter('meteor_port') == null) ? "3000" : $this->container->getParameter(
+                'meteor_port'
+            )).
+            "/api/";
+        $response = $browser->post($url.'login/', array(), '&user='.$username.'&password='.$password);
+        $auth = json_decode($response->getContent(), true);
+
+        if ($auth["status"] == "success") {
+            $user = $username;
+        } else {
+            $user = false;
+        }
 
         if (!$user) {
             throw new UsernameNotFoundException("User not found");
         } else {
-            $token = new UsernamePasswordToken($user, null, "main", array("ROLE_METEOR_ACCESS"/*, "ROLE_NEWS_ACCESS"*/));
+            $roles = array("ROLE_METEOR_ACCESS");
+
+            if (in_array($username, array("admin"))) {
+                $roles[] = "ROLE_NEWS_ACCESS";
+            }
+
+            $token = new UsernamePasswordToken($user, null, "main", $roles);
             //TODO: LIST ROLES
 
             $this->get("security.token_storage")->setToken($token);
