@@ -52,18 +52,29 @@ class Article
     /**
      *
      */
-    public function __construct(){
+    public function __construct()
+    {
         $this->date = new \Datetime();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     /**
@@ -80,13 +91,13 @@ class Article
     }
 
     /**
-     * Get title
+     * Get content
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
+    public function getContent()
     {
-        return $this->title;
+        return $this->content;
     }
 
     /**
@@ -103,13 +114,13 @@ class Article
     }
 
     /**
-     * Get content
+     * Get date
      *
-     * @return string 
+     * @return \DateTime
      */
-    public function getContent()
+    public function getDate()
     {
-        return $this->content;
+        return $this->date;
     }
 
     /**
@@ -126,13 +137,13 @@ class Article
     }
 
     /**
-     * Get date
+     * Get author
      *
-     * @return \DateTime 
+     * @return string
      */
-    public function getDate()
+    public function getAuthor()
     {
-        return $this->date;
+        return $this->author;
     }
 
     /**
@@ -146,15 +157,5 @@ class Article
         $this->author = $author;
 
         return $this;
-    }
-
-    /**
-     * Get author
-     *
-     * @return string 
-     */
-    public function getAuthor()
-    {
-        return $this->author;
     }
 }

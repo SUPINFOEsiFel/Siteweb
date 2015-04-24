@@ -2,14 +2,14 @@
 
 namespace FEL\AdminBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FEL\AdminBundle\Entity\Article;
+use FEL\AdminBundle\Form\EditArticleForm;
+use FEL\AdminBundle\Form\NewArticleForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use FEL\AdminBundle\Entity\Article;
-use FEL\AdminBundle\Form\NewArticleForm;
-use FEL\AdminBundle\Form\EditArticleForm;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Article controller.

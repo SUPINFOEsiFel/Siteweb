@@ -1,8 +1,8 @@
-ul.record_actions{
+ul.record_actions {
     padding-left: 0;
 }
 
-ul.record_actions > li{
+ul.record_actions > li {
     display: inline-block;
     padding-left: 4px;
 }

@@ -4,7 +4,7 @@
 
 {% block appendStylesheets %}
     {% stylesheets '@FELAdminBundle/Resources/public/css/news.css' %}
-    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
     {% endstylesheets %}
 {% endblock %}
 
@@ -26,30 +26,30 @@
 
         <table class="table record_properties">
             <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>{{ entity.id }}</td>
-                </tr>
-                <tr>
-                    <th>Title</th>
-                    <td>{{ entity.title }}</td>
-                </tr>
-                <tr>
-                    <th>Content</th>
-                    <td>{{ entity.content }}</td>
-                </tr>
-                <tr>
-                    <th>Date</th>
-                    <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
-                </tr>
-                <tr>
-                    <th>Author</th>
-                    <td>{{ entity.author }}</td>
-                </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ entity.content }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ entity.author }}</td>
+            </tr>
             </tbody>
         </table>
 
-            <ul class="record_actions">
+        <ul class="record_actions">
             <li>
                 <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}" class="btn btn-default">
                     <span class="fa fa-pencil"></span> Edit

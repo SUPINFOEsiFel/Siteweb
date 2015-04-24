@@ -17,18 +17,19 @@ class NewArticleForm extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('author')
-        ;
+            ->add('author');
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'FEL\AdminBundle\Entity\Article'
-        ));
+        $resolver->setDefaults(
+            array(
+                'data_class' => 'FEL\AdminBundle\Entity\Article'
+            )
+        );
     }
 
     /**

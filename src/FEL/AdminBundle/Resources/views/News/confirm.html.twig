@@ -4,8 +4,8 @@
 
 {% block appendStylesheets %}
     {% stylesheets '@FELAdminBundle/Resources/public/css/news.css'
-                   '@FELAdminBundle/Resources/public/css/news-confirm.css' %}
-    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    '@FELAdminBundle/Resources/public/css/news-confirm.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
     {% endstylesheets %}
 {% endblock %}
 
@@ -61,7 +61,8 @@
                         <strong>Voulez-vous continuer ?</strong>
                     </li>
                     <li>
-                        <a class="btn btn-default" href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}" role="button">
+                        <a class="btn btn-default" href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}"
+                           role="button">
                             Annuler
                         </a>
                     </li>
