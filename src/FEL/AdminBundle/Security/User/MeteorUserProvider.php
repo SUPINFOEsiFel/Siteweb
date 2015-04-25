@@ -13,7 +13,7 @@ class MeteorUserProvider implements UserProviderInterface
         $userData = false;
 
         if ($userData) {
-            return new MeteorUser($username, null, "", array("ROLE_USER"), "", "");
+            return new MeteorUser($username, "", "", array("ROLE_USER"));
         }
 
         throw new UsernameNotFoundException(sprintf('Username "%s" does not exist.', $username));
@@ -25,7 +25,9 @@ class MeteorUserProvider implements UserProviderInterface
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
         }
 
-        //return $this->loadUserByUsername($user->getUsername());
+        //Dump user info
+        dump($user);
+
         return $user;
     }
 
