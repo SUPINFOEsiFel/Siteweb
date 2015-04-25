@@ -84,26 +84,16 @@ class DefaultController extends Controller
         $response = $browser->post($url.'login/', array(), '&user='.$username.'&password='.$password);
         $auth = json_decode($response->getContent(), true);
 
-        dump($auth);
-
         if ($auth["status"] == "success") {
-            $roles = array("ROLE_METEOR_ACCESS");
-
-            //TODO: separate into a parameter
-            if (in_array($username, array("admin"))) {
-                $roles[] = "ROLE_NEWS_ACCESS";
-            }
-
-            $user = new MeteorUser($username, null, null, $roles, $auth["data"]["userId"], $auth["data"]["authToken"]);
+            $user = new MeteorUser($username, $auth["data"]["userId"], $auth["data"]["authToken"]);
         } else {
-            $roles = array();
             $user = false;
         }
 
         if (!$user) {
             throw new UsernameNotFoundException("User not found");
         } else {
-            $token = new UsernamePasswordToken($user, null, "main", $roles);
+            $token = new UsernamePasswordToken($user, null, "main", $user->getRoles());
 
             $this->get("security.token_storage")->setToken($token);
 
