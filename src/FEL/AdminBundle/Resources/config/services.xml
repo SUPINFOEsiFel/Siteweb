@@ -4,13 +4,9 @@
            xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <services>
-        <service id="fel_admin.example" class="FEL\AdminBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="meteor_user_provider" class="FEL\AdminBundle\Security\User\MeteorUserProvider">
         </service>
     </services>
-    -->
+
 </container>
