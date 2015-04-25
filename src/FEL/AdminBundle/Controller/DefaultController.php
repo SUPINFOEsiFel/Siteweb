@@ -94,7 +94,7 @@ class DefaultController extends Controller
                 $roles[] = "ROLE_NEWS_ACCESS";
             }
 
-            $user = new MeteorUser($username, $password, null, $roles, $auth["data"]["userId"], $auth["data"]["authToken"]);
+            $user = new MeteorUser($username, null, null, $roles, $auth["data"]["userId"], $auth["data"]["authToken"]);
         } else {
             $roles = array();
             $user = false;

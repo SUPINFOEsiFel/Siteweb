@@ -9,7 +9,7 @@
     </div>
     <div class="container">
         <div class="page-header">
-            <h2>Bienvenue, {{ app.security.getToken().getUser() }}</h2>
+            <h2>Bienvenue, {{ app.security.getToken().getUser().getUsername() }}</h2>
         </div>
         <div class="row">
             {% if is_granted('ROLE_USER') %}

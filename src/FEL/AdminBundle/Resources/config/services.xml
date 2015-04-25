@@ -4,11 +4,9 @@
            xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--<services>
-        <service id="wsse.security.authentication.provider" class="FEL\AdminBundle\Security\Authentication\Provider\MeteorProvider">
-            <argument>%parameter_name%%kernel.cache_dir%/security/nonces</argument>
+    <services>
+        <service id="meteor_user_provider" class="FEL\AdminBundle\Security\User\MeteorUserProvider">
         </service>
     </services>
-    -->
 
 </container>
