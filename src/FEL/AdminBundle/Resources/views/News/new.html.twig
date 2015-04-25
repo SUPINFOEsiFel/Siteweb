@@ -1,5 +1,7 @@
 {% extends "FELAdminBundle:Default:layout.html.twig" %}
 
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
 {% block title %}New Article - News Management{% endblock %}
 
 {% block appendStylesheets %}
@@ -26,12 +28,5 @@
 
         {{ form(form) }}
 
-        <ul class="record_actions">
-            <li>
-                <a href="{{ path('fel_admin_news_homepage') }}">
-                    Back to the list
-                </a>
-            </li>
-        </ul>
     </section>
 {% endblock %}
