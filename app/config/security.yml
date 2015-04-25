@@ -48,5 +48,5 @@ security:
     access_control:
         - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/news, roles: ROLE_NEWS_ACCESS }
-        #- { path: ^/admin/events, roles: ROLE_METEOR_ACCESS }
+        - { path: ^/admin/events, roles: ROLE_METEOR_ACCESS }
         - { path: ^/admin, roles: ROLE_USER }

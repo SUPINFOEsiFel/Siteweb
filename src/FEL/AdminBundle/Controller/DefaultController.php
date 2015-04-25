@@ -3,15 +3,16 @@
 namespace FEL\AdminBundle\Controller;
 
 use Buzz;
+use FEL\AdminBundle\Security\User\MeteorUser;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
-use FEL\AdminBundle\Security\User\MeteorUser;
 
 /**
  * Class DefaultController
@@ -81,7 +82,14 @@ class DefaultController extends Controller
             )) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
                     'meteor_port'
                 ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
-        $response = $browser->post($url.'login/', array(), '&user='.$username.'&password='.$password);
+        $response = null;
+
+        try{
+            $response = $browser->post($url.'login/', array(), '&user='.$username.'&password='.$password);
+        } catch (Buzz\Exception\RequestException $e) {
+            throw new ServiceUnavailableHttpException(null, "Meteor Service Unavailable, cannot reach the server.");
+        }
+
         $auth = json_decode($response->getContent(), true);
 
         if ($auth["status"] == "success") {

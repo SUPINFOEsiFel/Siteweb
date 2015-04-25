@@ -1,6 +1,6 @@
 {% extends "FELAdminBundle:Default:layout.html.twig" %}
 
-{% block title %}Articles List - News Management{% endblock %}
+{% block title %}Event list - Events management{% endblock %}
 
 {% block appendStylesheets %}
     {% stylesheets '@FELAdminBundle/Resources/public/css/inline-record-actions.css'
@@ -9,56 +9,52 @@
     {% endstylesheets %}
 {% endblock %}
 
-{% block appendJavascripts %}
-    {% javascripts '@FELAdminBundle/Resources/public/js/clickable-records.js' %}
-    <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
-    {% endjavascripts %}
-{% endblock %}
-
-{% block body -%}
+{% block body %}
     <div class="jumbotron jumbotron-trianglify">
-        <div class="container"><h1>Modification des news</h1></div>
+        <div class="container"><h1>Modification des events</h1></div>
     </div>
 
     <section class="container">
         <ol class="breadcrumb">
             <li><a href="{{ path('fel_admin_homepage') }}">Admin</a></li>
-            <li class="active">Articles</li>
+            <li class="active">Events</li>
         </ol>
 
         <div class="page-header">
-            <h2>Articles list</h2>
+            <h2>Events list</h2>
         </div>
 
         <table class="table table-striped table-hover records_list">
             <thead>
             <tr>
                 <th class="">Id</th>
-                <th class="col-md-6">Title</th>
-                <th class="col-md-3">Author</th>
-                <th class="col-md-2">Date</th>
+                <th class="">Name</th>
+                <th class="">Begin</th>
+                <th class="">End</th>
+                <th class="">Created on</th>
                 <th class="text-right col-md-2">Actions</th>
             </tr>
             </thead>
             <tbody>
-            {% for entity in entities %}
-                <tr data-href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}">
-                    <td><a href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.title }}</td>
-                    <td>{{ entity.author }}</td>
-                    <td>{% if entity.date %}{{ entity.date|date('H:i:s d/m/Y') }}{% endif %}</td>
+            {% for events in meteor.events %}
+                <tr data-href="#{#{{ path('fel_admin_news_show', { 'id': entity.id }) }}#}">
+                    <td><a href="#{#{{ path('fel_admin_news_show', { 'id': entity.id }) }}#}">{{ events._id }}</a></td>
+                    <td>{{ events.name }}</td>
+                    <td>{{ events.begin }}</td>
+                    <td>{{ events.end }}</td>
+                    <td>{{ events.date }}</td>
                     <td>
                         <ul class="record_actions text-right">
                             <li>
-                                <a href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}"><span
+                                <a href="#{#{{ path('fel_admin_news_show', { 'id': entity.id }) }}#}"><span
                                             class="fa fa-eye"></span></a>
                             </li>
                             <li>
-                                <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}"><span
+                                <a href="#{#{{ path('fel_admin_news_edit', { 'id': entity.id }) }}#}"><span
                                             class="fa fa-pencil"></span></a>
                             </li>
                             <li>
-                                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}"><span
+                                <a href="#{#{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}#}"><span
                                             class="fa fa-times text-danger"></span></a>
                             </li>
                         </ul>
@@ -70,10 +66,11 @@
 
         <ul class="record_actions">
             <li>
-                <a href="{{ path('fel_admin_news_new') }}" class="btn btn-success" role="button">
-                    <span class="fa fa-plus"></span> Create a new article
+                <a href="#" class="btn btn-success" role="button">
+                    <span class="fa fa-plus"></span> Create a new event
                 </a>
             </li>
         </ul>
     </section>
+
 {% endblock %}
