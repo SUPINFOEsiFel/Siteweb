@@ -9,6 +9,12 @@
     {% endstylesheets %}
 {% endblock %}
 
+{% block appendJavascripts %}
+    {% javascripts '@FELAdminBundle/Resources/public/js/clickable-records.js' %}
+    <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block body %}
     <div class="jumbotron jumbotron-trianglify">
         <div class="container"><h1>Modification des events</h1></div>
@@ -46,17 +52,17 @@
                     <td>
                         <ul class="record_actions text-right">
                             <li>
-                                <a href="{{ path('fel_admin_events_show', { 'id': entity.id }) }}"><span
+                                <a href="{{ path('fel_admin_events_show', { 'id': events._id }) }}"><span
                                             class="fa fa-eye"></span></a>
                             </li>
-                            <li>
-                                <a href="#{#{{ path('fel_admin_news_edit', { 'id': entity.id }) }}#}"><span
+                            {#<li>
+                                <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}"><span
                                             class="fa fa-pencil"></span></a>
                             </li>
                             <li>
-                                <a href="#{#{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}#}"><span
+                                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}"><span
                                             class="fa fa-times text-danger"></span></a>
-                            </li>
+                            </li>#}
                         </ul>
                     </td>
                 </tr>
