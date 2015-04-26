@@ -55,6 +55,17 @@
             {% endif %}
             {% if is_granted('ROLE_USER') %}
                 <div class="col-xs-12 col-sm-6 col-md-3">
+                    <a href="#" class="thumbnail text-center">
+                        <span class="fa fa-comments-o fa-5x"></span>
+
+                        <div class="caption">
+                            <h3>Forum</h3>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            {% if is_granted('ROLE_USER') %}
+                <div class="col-xs-12 col-sm-6 col-md-3">
                     <a href="{{ path('fel_admin_logout') }}" class="thumbnail text-center">
                         <span class="fa fa-sign-out fa-5x"></span>
 

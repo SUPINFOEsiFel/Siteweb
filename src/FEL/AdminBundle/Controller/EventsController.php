@@ -28,7 +28,7 @@ class EventsController extends Controller
         $browser = new Buzz\Browser();
         $url = "http".(($this->container->getParameter(
                 'meteor_secure'
-            )) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
+            ) ) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
                     'meteor_port'
                 ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
         $response = null;

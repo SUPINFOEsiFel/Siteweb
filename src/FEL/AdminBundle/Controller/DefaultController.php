@@ -50,7 +50,6 @@ class DefaultController extends Controller
      */
     public function loginAction(Request $request)
     {
-        //TODO: review authentication failure message
         $session = $request->getSession();
 
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
@@ -75,7 +74,6 @@ class DefaultController extends Controller
         $username = $request->request->get('_username');
         $password = $request->request->get('_password');
 
-        //TODO: cover exception as authentication failure
         $browser = new Buzz\Browser();
         $url = "http".(($this->container->getParameter(
                 'meteor_secure'

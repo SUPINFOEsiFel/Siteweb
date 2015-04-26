@@ -16,7 +16,7 @@ class NewArticleForm extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
+            ->add('content', null, array("attr" => array("class" => "tinymce")))
             ->add('author');
     }
 

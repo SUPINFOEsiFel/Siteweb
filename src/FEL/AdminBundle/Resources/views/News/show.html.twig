@@ -27,7 +27,7 @@
         <table class="table record_properties">
             <tbody>
             <tr>
-                <th>Id</th>
+                <th class="col-md-2">Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <th>Content</th>
-                <td>{{ entity.content }}</td>
+                <td>{{ entity.content|raw }}</td>
             </tr>
             <tr>
                 <th>Date</th>

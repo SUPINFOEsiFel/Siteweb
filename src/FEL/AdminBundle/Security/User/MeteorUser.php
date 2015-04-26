@@ -83,6 +83,8 @@ class MeteorUser implements UserInterface
     }
 
     private function setRolesFromParameters(){
+        //TODO: obtain roles from parameters
+
         $this->roles = array("ROLE_METEOR_ACCESS");
 
         if (in_array($this->getUsername(), array("admin"))) {
