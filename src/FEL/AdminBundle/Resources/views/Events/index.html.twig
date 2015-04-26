@@ -37,8 +37,8 @@
             </thead>
             <tbody>
             {% for events in meteor.events %}
-                <tr data-href="#{#{{ path('fel_admin_news_show', { 'id': entity.id }) }}#}">
-                    <td><a href="#{#{{ path('fel_admin_news_show', { 'id': entity.id }) }}#}">{{ events._id }}</a></td>
+                <tr data-href="{{ path('fel_admin_events_show', { 'id': events._id }) }}">
+                    <td><a href="{{ path('fel_admin_events_show', { 'id': events._id }) }}">{{ events._id }}</a></td>
                     <td>{{ events.name }}</td>
                     <td>{{ events.city }}</td>
                     <td>{{ events.begin }}</td>
@@ -46,7 +46,7 @@
                     <td>
                         <ul class="record_actions text-right">
                             <li>
-                                <a href="#{#{{ path('fel_admin_news_show', { 'id': entity.id }) }}#}"><span
+                                <a href="{{ path('fel_admin_events_show', { 'id': entity.id }) }}"><span
                                             class="fa fa-eye"></span></a>
                             </li>
                             <li>

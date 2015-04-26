@@ -36,8 +36,8 @@ class EventsController extends Controller
             $response = $browser->get(
                 $url.'events/',
                 array(
-                    'X-User-Id' => $this->get('security.context')->getToken()->getUser()->getUserid(),
-                    'X-Auth-Token' => $this->get('security.context')->getToken()->getUser()->getMeteortoken(),
+                    'X-User-Id' => $this->get('security.token_storage')->getToken()->getUser()->getUserid(),
+                    'X-Auth-Token' => $this->get('security.token_storage')->getToken()->getUser()->getMeteortoken(),
                 )
             );
         } catch (Buzz\Exception\RequestException $e) {
@@ -130,20 +130,37 @@ class EventsController extends Controller
      * @param $id
      * @return array
      */
-//    public function showAction($id)
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $entity = $em->getRepository('FELAdminBundle:Article')->find($id);
-//
-//        if (!$entity) {
-//            throw $this->createNotFoundException('Unable to find Article entity.');
-//        }
-//
-//        return array(
-//            'entity' => $entity,
-//        );
-//    }
+    public function showAction($id)
+    {
+        $browser = new Buzz\Browser();
+        $url = "http".(($this->container->getParameter(
+                'meteor_secure'
+            )) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
+                    'meteor_port'
+                ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
+        $response = null;
+        try {
+            $response = $browser->get(
+                $url.'event/'.$id,
+                array(
+                    'X-User-Id' => $this->get('security.token_storage')->getToken()->getUser()->getUserid(),
+                    'X-Auth-Token' => $this->get('security.token_storage')->getToken()->getUser()->getMeteortoken(),
+                )
+            );
+        } catch (Buzz\Exception\RequestException $e) {
+            throw new ServiceUnavailableHttpException(null, "Meteor Service Unavailable, cannot reach the server.");
+        }
+
+        $json = json_decode($response->getContent(), true);
+
+        if ($json["status"] == "fail") {
+            throw $this->createNotFoundException('Unable to find Event entity.');
+        }
+
+        return array(
+            "meteor" => $json
+        );
+    }
 
     /**
      * Displays a form to edit an existing Article entity.

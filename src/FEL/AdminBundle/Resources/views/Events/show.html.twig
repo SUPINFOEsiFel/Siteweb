@@ -1,0 +1,93 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+
+{% block title %}Show Event - News Management{% endblock %}
+
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/inline-record-actions.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    <div class="jumbotron jumbotron-trianglify">
+        <div class="container"><h1>Modification des events</h1></div>
+    </div>
+    <section class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="{{ path('fel_admin_homepage') }}">Admin</a></li>
+            <li><a href="{{ path('fel_admin_events_homepage') }}">Events</a></li>
+            <li class="active">#{{ meteor.data._id }}</li>
+        </ol>
+
+        <div class="page-header">
+            <h2>Event</h2>
+        </div>
+
+        <table class="table record_properties">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ meteor.data._id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ meteor.data.name }}</td>
+            </tr>
+            <tr>
+                <th>Begin</th>
+                <td>{{ meteor.data.begin }}</td>
+            </tr>
+            <tr>
+                <th>End</th>
+                <td>{{ meteor.data.end }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ meteor.data.price }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ meteor.data.address }}</td>
+            </tr>
+            <tr>
+                <th>ZipCode</th>
+                <td>{{ meteor.data.zipCode }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ meteor.data.city }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ meteor.data.country }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ meteor.data.link }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ meteor.data.comment }}</td>
+            </tr>
+            <tr>
+                <th>Created on</th>
+                <td>{{ meteor.data.date }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <ul class="record_actions">
+            {#<li>
+                <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}" class="btn btn-default">
+                    <span class="fa fa-pencil"></span> Edit
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}" class="btn btn-danger">
+                    <span class="fa fa-times"></span> Delete
+                </a>
+            </li>#}
+        </ul>
+    </section>
+{% endblock %}
