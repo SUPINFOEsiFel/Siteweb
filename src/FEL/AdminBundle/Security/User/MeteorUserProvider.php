@@ -25,9 +25,6 @@ class MeteorUserProvider implements UserProviderInterface
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
         }
 
-        //Dump user info
-        dump($user);
-
         return $user;
     }
 
