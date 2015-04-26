@@ -50,15 +50,15 @@
                     <td>
                         <ul class="record_actions text-right">
                             <li>
-                                <a href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}"><span
+                                <a title="show" href="{{ path('fel_admin_news_show', { 'id': entity.id }) }}"><span
                                             class="fa fa-eye"></span></a>
                             </li>
                             <li>
-                                <a href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}"><span
+                                <a title="edit" href="{{ path('fel_admin_news_edit', { 'id': entity.id }) }}"><span
                                             class="fa fa-pencil"></span></a>
                             </li>
                             <li>
-                                <a href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}"><span
+                                <a title="delete" href="{{ path('fel_admin_news_confirm', { 'id': entity.id }) }}"><span
                                             class="fa fa-times text-danger"></span></a>
                             </li>
                         </ul>
