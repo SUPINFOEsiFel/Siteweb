@@ -36,6 +36,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
 
+    <script type="text/javascript" src="http://cdn.ucb.org.br/Scripts/tablesorter/jquery.tablesorter.min.js"></script>
+    {% javascripts '@FELAdminBundle/Resources/public/js/tablesorter.js' %}
+    <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
+    {% endjavascripts %}
+
     {# appendJavascripts #}
     {% block appendJavascripts %}{% endblock %}
 {% endblock %}
