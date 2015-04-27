@@ -2,15 +2,13 @@
 {% block stylesheets %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-
-    <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    {% stylesheets
+    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
+    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css'
+    '%kernel.root_dir%/../vendor/components/font-awesome/css/font-awesome.min.css'
+    '@FELAdminBundle/Resources/public/css/trianglify.css'%}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,47 +16,24 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css">
-    {% stylesheets '@FELAdminBundle/Resources/public/css/trianglify.css' %}
-    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
-    {% endstylesheets %}
 
     {# appendStylesheets #}
     {% block appendStylesheets %}{% endblock %}
 {% endblock %}
 {% block javascripts %}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
-
-    <script type="text/javascript" src="http://cdn.ucb.org.br/Scripts/tablesorter/jquery.tablesorter.min.js"></script>
-    {% javascripts '@FELAdminBundle/Resources/public/js/tablesorter.js' %}
+    {% javascripts
+    '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
+    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js'
+    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js'
+    '%kernel.root_dir%/../vendor/tinymce/tinymce/tinymce.min.js'
+    '@FELAdminBundle/Resources/public/js/tablesorter.min.js'
+    '@FELAdminBundle/Resources/public/js/tablesorter-init.js'
+    '@FELAdminBundle/Resources/public/js/tinymce.js' %}
     <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
     {% endjavascripts %}
 
-    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-    <script type="text/javascript">
-        tinymce.init({
-            selector: ".tinymce",
-            plugins: [
-                "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                "table contextmenu directionality emoticons textcolor paste fullpage textcolor"
-            ],
-
-            toolbar1: "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | formatselect fontselect fontsizeselect",
-            toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
-            toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
-
-            menubar: false,
-            toolbar_items_size: 'small'
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js"></script>
 
     {# appendJavascripts #}
     {% block appendJavascripts %}{% endblock %}

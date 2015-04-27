@@ -21,7 +21,11 @@
         "sensio/distribution-bundle": "~3.0,>=3.0.12",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "kriswallsmith/buzz": "v0.13"
+        "kriswallsmith/buzz": "v0.13",
+        "twbs/bootstrap": "3.3.x-dev",
+        "components/font-awesome": "4.3.0",
+        "components/jquery": "2.1.3",
+        "tinymce/tinymce": "4.1.9"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
