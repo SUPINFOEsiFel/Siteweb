@@ -3,7 +3,7 @@ tinymce.init({
     plugins: [
         "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-        "table contextmenu directionality emoticons textcolor paste fullpage textcolor"
+        "table contextmenu directionality emoticons textcolor paste textcolor"
     ],
 
     toolbar1: "newdocument | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | formatselect fontselect fontsizeselect",
