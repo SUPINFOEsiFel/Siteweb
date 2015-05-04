@@ -2,11 +2,10 @@
 {% block stylesheets %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% stylesheets
-    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
-    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css'
-    '%kernel.root_dir%/../vendor/components/font-awesome/css/font-awesome.min.css'
-    '@FELAdminBundle/Resources/public/css/trianglify.css'%}
+    <link rel="stylesheet" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap-theme.min.css') }}" type="text/css"/>
+    {% stylesheets '@FELAdminBundle/Resources/public/css/trianglify.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
     {% endstylesheets %}
 
@@ -22,14 +21,11 @@
     {% block appendStylesheets %}{% endblock %}
 {% endblock %}
 {% block javascripts %}
+    <script src="{{ asset('lib/jquery/jquery.min.js') }}" rel="script" type="application/javascript"></script>
+    <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}" rel="script" type="application/javascript"></script>
     {% javascripts
-    '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
-    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js'
-    '%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js'
-    '%kernel.root_dir%/../vendor/tinymce/tinymce/tinymce.min.js'
     '@FELAdminBundle/Resources/public/js/tablesorter.min.js'
-    '@FELAdminBundle/Resources/public/js/tablesorter-init.js'
-    '@FELAdminBundle/Resources/public/js/tinymce.js' %}
+    '@FELAdminBundle/Resources/public/js/tablesorter-init.js' %}
     <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
     {% endjavascripts %}
 

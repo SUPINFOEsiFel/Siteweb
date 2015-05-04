@@ -45,6 +45,228 @@ assetic:
         #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
         #yui_css:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+    assets:
+        #LIBRARY : JQuery
+        jquery:
+            inputs: "%kernel.root_dir%/../vendor/components/jquery/jquery.min.js"
+            output: "lib/jquery/jquery.min.js"
+        #LIBRARY : Font Awesome
+        font-awesome:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/css/font-awesome.min.css"
+            output: "lib/font-awesome/css/font-awesome.min.css"
+        font-awesome-otf:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/fonts/FontAwesome.otf"
+            output: "lib/font-awesome/fonts/FontAwesome.otf"
+        font-awesome-eot:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.eot"
+            output: "lib/font-awesome/fonts/fontawesome-webfont.eot"
+        font-awesome-svg:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.svg"
+            output: "lib/font-awesome/fonts/fontawesome-webfont.svg"
+        font-awesome-ttf:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.ttf"
+            output: "lib/font-awesome/fonts/fontawesome-webfont.ttf"
+        font-awesome-woff:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.woff"
+            output: "lib/font-awesome/fonts/fontawesome-webfont.woff"
+        font-awesome-woff2:
+            inputs: "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.woff2"
+            output: "lib/font-awesome/fonts/fontawesome-webfont.woff2"
+        #LIBRARY : Bootstrap
+        bootstrap-css:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css"
+            output: "lib/bootstrap/css/bootstrap.min.css"
+        bootstrap-theme:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css"
+            output: "lib/bootstrap/css/bootstrap-theme.min.css"
+        bootstrap-js:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
+            output: "lib/bootstrap/js/bootstrap.min.js"
+        bootstrap-eot:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
+            output: "lib/bootstrap/fonts/glyphicons-halflings-regular.eot"
+        bootstrap-svg:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
+            output: "lib/bootstrap/fonts/glyphicons-halflings-regular.svg"
+        bootstrap-ttf:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
+            output: "lib/bootstrap/fonts/glyphicons-halflings-regular.ttf"
+        bootstrap-woff:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+            output: "lib/bootstrap/fonts/glyphicons-halflings-regular.woff"
+        bootstrap-woff2:
+            inputs: "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
+            output: "lib/bootstrap/fonts/glyphicons-halflings-regular.woff2"
+        #LIBRARY : TinyMCE
+        tinymce-js:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/tinymce.min.js"
+            output: "lib/tinymce/tinymce.min.js"
+        tinymce-plugin-advlist:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/advlist/plugin.min.js"
+            output: "lib/tinymce/plugins/advlist/plugin.min.js"
+        tinymce-plugin-anchor:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/anchor/plugin.min.js"
+            output: "lib/tinymce/plugins/anchor/plugin.min.js"
+        tinymce-plugin-autolink:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/autolink/plugin.min.js"
+            output: "lib/tinymce/plugins/autolink/plugin.min.js"
+        tinymce-plugin-autoresize:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/autoresize/plugin.min.js"
+            output: "lib/tinymce/plugins/autoresize/plugin.min.js"
+        tinymce-plugin-autosave:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/autosave/plugin.min.js"
+            output: "lib/tinymce/plugins/autosave/plugin.min.js"
+        tinymce-plugin-bbcode:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/bbcode/plugin.min.js"
+            output: "lib/tinymce/plugins/bbcode/plugin.min.js"
+        tinymce-plugin-charmap:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/charmap/plugin.min.js"
+            output: "lib/tinymce/plugins/charmap/plugin.min.js"
+        tinymce-plugin-code:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/code/plugin.min.js"
+            output: "lib/tinymce/plugins/code/plugin.min.js"
+        tinymce-plugin-colorpicker:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/colorpicker/plugin.min.js"
+            output: "lib/tinymce/plugins/colorpicker/plugin.min.js"
+        tinymce-plugin-contextmenu:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/contextmenu/plugin.min.js"
+            output: "lib/tinymce/plugins/contextmenu/plugin.min.js"
+        tinymce-plugin-directionality:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/directionality/plugin.min.js"
+            output: "lib/tinymce/plugins/directionality/plugin.min.js"
+        tinymce-plugin-emoticons:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/emoticons/plugin.min.js"
+            output: "lib/tinymce/plugins/emoticons/plugin.min.js"
+        tinymce-plugin-fullpage:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/fullpage/plugin.min.js"
+            output: "lib/tinymce/plugins/fullpage/plugin.min.js"
+        tinymce-plugin-fullscreen:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/fullscreen/plugin.min.js"
+            output: "lib/tinymce/plugins/fullscreen/plugin.min.js"
+        tinymce-plugin-hr:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/hr/plugin.min.js"
+            output: "lib/tinymce/plugins/hr/plugin.min.js"
+        tinymce-plugin-image:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/image/plugin.min.js"
+            output: "lib/tinymce/plugins/image/plugin.min.js"
+        tinymce-plugin-importcss:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/importcss/plugin.min.js"
+            output: "lib/tinymce/plugins/importcss/plugin.min.js"
+        tinymce-plugin-insertdatetime:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/insertdatetime/plugin.min.js"
+            output: "lib/tinymce/plugins/insertdatetime/plugin.min.js"
+        tinymce-plugin-layer:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/layer/plugin.min.js"
+            output: "lib/tinymce/plugins/layer/plugin.min.js"
+        tinymce-plugin-legacyoutput:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/legacyoutput/plugin.min.js"
+            output: "lib/tinymce/plugins/legacyoutput/plugin.min.js"
+        tinymce-plugin-link:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/link/plugin.min.js"
+            output: "lib/tinymce/plugins/link/plugin.min.js"
+        tinymce-plugin-lists:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/lists/plugin.min.js"
+            output: "lib/tinymce/plugins/lists/plugin.min.js"
+        tinymce-plugin-media:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/media/plugin.min.js"
+            output: "lib/tinymce/plugins/media/plugin.min.js"
+        tinymce-plugin-nonbreaking:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/nonbreaking/plugin.min.js"
+            output: "lib/tinymce/plugins/nonbreaking/plugin.min.js"
+        tinymce-plugin-noneditable:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/noneditable/plugin.min.js"
+            output: "lib/tinymce/plugins/noneditable/plugin.min.js"
+        tinymce-plugin-pagebreak:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/pagebreak/plugin.min.js"
+            output: "lib/tinymce/plugins/pagebreak/plugin.min.js"
+        tinymce-plugin-paste:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/paste/plugin.min.js"
+            output: "lib/tinymce/plugins/paste/plugin.min.js"
+        tinymce-plugin-preview:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/preview/plugin.min.js"
+            output: "lib/tinymce/plugins/preview/plugin.min.js"
+        tinymce-plugin-print:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/print/plugin.min.js"
+            output: "lib/tinymce/plugins/print/plugin.min.js"
+        tinymce-plugin-save:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/save/plugin.min.js"
+            output: "lib/tinymce/plugins/save/plugin.min.js"
+        tinymce-plugin-searchreplace:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/searchreplace/plugin.min.js"
+            output: "lib/tinymce/plugins/searchreplace/plugin.min.js"
+        tinymce-plugin-spellchecker:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/spellchecker/plugin.min.js"
+            output: "lib/tinymce/plugins/spellchecker/plugin.min.js"
+        tinymce-plugin-tabfocus:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/tabfocus/plugin.min.js"
+            output: "lib/tinymce/plugins/tabfocus/plugin.min.js"
+        tinymce-plugin-table:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/table/plugin.min.js"
+            output: "lib/tinymce/plugins/table/plugin.min.js"
+        tinymce-plugin-template:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/template/plugin.min.js"
+            output: "lib/tinymce/plugins/template/plugin.min.js"
+        tinymce-plugin-textcolor:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/textcolor/plugin.min.js"
+            output: "lib/tinymce/plugins/textcolor/plugin.min.js"
+        tinymce-plugin-textpattern:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/textpattern/plugin.min.js"
+            output: "lib/tinymce/plugins/textpattern/plugin.min.js"
+        tinymce-plugin-visualblocks:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/visualblocks/plugin.min.js"
+            output: "lib/tinymce/plugins/visualblocks/plugin.min.js"
+        tinymce-plugin-visualchars:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/visualchars/plugin.min.js"
+            output: "lib/tinymce/plugins/visualchars/plugin.min.js"
+        tinymce-plugin-wordcount:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/plugins/wordcount/plugin.min.js"
+            output: "lib/tinymce/plugins/wordcount/plugin.min.js"
+        tinymce-theme:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/themes/modern/theme.min.js"
+            output: "lib/tinymce/themes/modern/theme.min.js"
+        tinymce-skin:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/skin.min.css"
+            output: "lib/tinymce/skins/lightgray/skin.min.css"
+        tinymce-skin-content:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/content.min.css"
+            output: "lib/tinymce/skins/lightgray/content.min.css"
+        tinymce-skin-eot:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce.eot"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce.eot"
+        tinymce-skin-small-eot:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce-small.eot"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce-small.eot"
+        tinymce-skin-svg:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce.svg"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce.svg"
+        tinymce-skin-small-svg:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce-small.svg"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce-small.svg"
+        tinymce-skin-ttf:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce.ttf"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce.ttf"
+        tinymce-skin-small-ttf:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce-small.ttf"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce-small.ttf"
+        tinymce-skin-woff:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce.woff"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce.woff"
+        tinymce-skin-small-woff:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/fonts/tinymce-small.woff"
+            output: "lib/tinymce/skins/lightgray/fonts/tinymce-small.woff"
+        tinymce-skin-anchor:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/img/anchor.gif"
+            output: "lib/tinymce/skins/lightgray/img/anchor.gif"
+        tinymce-skin-loader:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/img/loader.gif"
+            output: "lib/tinymce/skins/lightgray/img/loader.gif"
+        tinymce-skin-object:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/img/object.gif"
+            output: "lib/tinymce/skins/lightgray/img/object.gif"
+        tinymce-skin-trans:
+            inputs: "%kernel.root_dir%/../vendor/tinymce/tinymce/skins/lightgray/img/trans.gif"
+            output: "lib/tinymce/skins/lightgray/img/trans.gif"
+
 
 # Doctrine Configuration
 doctrine:

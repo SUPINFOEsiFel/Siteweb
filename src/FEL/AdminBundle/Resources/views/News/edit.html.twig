@@ -4,6 +4,13 @@
 
 {% block title %}Article Edit - News Management{% endblock %}
 
+{% block appendJavascripts %}
+    <script src="{{ asset('lib/tinymce/tinymce.min.js') }}" rel="script" type="application/javascript"></script>
+    {% javascripts '@FELAdminBundle/Resources/public/js/tinymce.js' %}
+    <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block appendStylesheets %}
     {% stylesheets '@FELAdminBundle/Resources/public/css/inline-record-actions.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
