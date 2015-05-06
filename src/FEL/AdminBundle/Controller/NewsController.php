@@ -84,7 +84,7 @@ class NewsController extends Controller
             )
         );
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Create', 'attr' => array('class' => 'btn-success')));
 
         return $form;
     }
