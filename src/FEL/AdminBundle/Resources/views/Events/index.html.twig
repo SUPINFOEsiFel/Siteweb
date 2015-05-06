@@ -17,7 +17,7 @@
 
 {% block body %}
     <div class="jumbotron jumbotron-trianglify">
-        <div class="container"><h1>Modification des events</h1></div>
+        <div class="container"><h1>Gestion des events</h1></div>
     </div>
 
     <section class="container">
@@ -72,7 +72,7 @@
 
         <ul class="record_actions">
             <li>
-                <a href="#" class="btn btn-success" role="button">
+                <a href="{{ path("fel_admin_events_new") }}" class="btn btn-success" role="button">
                     <span class="fa fa-plus"></span> Create a new event
                 </a>
             </li>

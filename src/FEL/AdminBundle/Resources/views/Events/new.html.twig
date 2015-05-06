@@ -19,18 +19,18 @@
 
 {% block body -%}
     <div class="jumbotron jumbotron-trianglify">
-        <div class="container"><h1>Gestion des news</h1></div>
+        <div class="container"><h1>Gestion des events</h1></div>
     </div>
     <section class="container">
 
         <ol class="breadcrumb">
             <li><a href="{{ path('fel_admin_homepage') }}">Admin</a></li>
-            <li><a href="{{ path('fel_admin_news_homepage') }}">Articles</a></li>
+            <li><a href="{{ path('fel_admin_events_homepage') }}">Events</a></li>
             <li class="active">New</li>
         </ol>
 
         <div class="page-header">
-            <h2>Article creation</h2>
+            <h2>Event creation</h2>
         </div>
 
         {{ form(form) }}
