@@ -252,7 +252,7 @@ class EventsController extends Controller
 //            new EditArticleForm(),
 //            $entity,
 //            array(
-//                'action' => $this->generateUrl('fel_admin_news_update', array('id' => $entity->getId())),
+//                'action' => $this->generateUrl('fel_admin_events_update', array('id' => $entity->getId())),
 //                'method' => 'PUT',
 //            )
 //        );
@@ -267,7 +267,7 @@ class EventsController extends Controller
      *
      * @Route("/{id}")
      * @Method("PUT")
-     * @Template("FELAdminBundle:News:edit.html.twig")
+     * @Template("FELAdminBundle:Events:edit.html.twig")
      * @param Request $request
      * @param $id
      * @return array|\Symfony\Component\HttpFoundation\RedirectResponse
@@ -288,7 +288,7 @@ class EventsController extends Controller
 //        if ($editForm->isValid()) {
 //            $em->flush();
 //
-//            return $this->redirect($this->generateUrl('fel_admin_news_show', array('id' => $id)));
+//            return $this->redirect($this->generateUrl('fel_admin_events_show', array('id' => $id)));
 //        }
 //
 //        return array(
@@ -349,7 +349,7 @@ class EventsController extends Controller
 //            $em->flush();
 //        }
 //
-//        return $this->redirect($this->generateUrl('fel_admin_news_homepage'));
+//        return $this->redirect($this->generateUrl('fel_admin_events_homepage'));
 //    }
 
     /**
@@ -362,7 +362,7 @@ class EventsController extends Controller
 //    private function createDeleteForm($id)
 //    {
 //        return $this->createFormBuilder()
-//            ->setAction($this->generateUrl('fel_admin_news_delete', array('id' => $id)))
+//            ->setAction($this->generateUrl('fel_admin_events_delete', array('id' => $id)))
 //            ->setMethod('DELETE')
 //            ->add('submit', 'submit', array('label' => 'Supprimer', 'attr' => array('class' => 'btn btn-danger')))
 //            ->getForm();
