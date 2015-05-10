@@ -8,9 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException;
 
 /**
  * Class EventsController
@@ -28,26 +26,7 @@ class EventsController extends Controller
      */
     public function indexAction()
     {
-        $browser = new Buzz\Browser();
-        $url = "http".(($this->container->getParameter(
-                'meteor_secure'
-            ) ) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
-                    'meteor_port'
-                ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
-        $response = null;
-        try {
-            $response = $browser->get(
-                $url.'events/',
-                array(
-                    'X-User-Id' => $this->get('security.token_storage')->getToken()->getUser()->getUserid(),
-                    'X-Auth-Token' => $this->get('security.token_storage')->getToken()->getUser()->getMeteortoken(),
-                )
-            );
-        } catch (Buzz\Exception\RequestException $e) {
-            throw new ServiceUnavailableHttpException(null, "Meteor Service Unavailable, cannot reach the server.");
-        }
-
-        $json = json_decode($response->getContent(), true);
+        $json = $this->get("meteor.browser")->get("events/");
 
         return array(
             "meteor" => $json
@@ -70,31 +49,9 @@ class EventsController extends Controller
 
         if ($form->isValid()) {
 
-            $browser = new Buzz\Browser();
-            $url = "http".(($this->container->getParameter(
-                    'meteor_secure'
-                )) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
-                        'meteor_port'
-                    ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
-            $response = null;
-            try {
-                $response = $browser->post(
-                    $url.'event/',
-                    array(
-                        'X-User-Id' => $this->get('security.token_storage')->getToken()->getUser()->getUserid(),
-                        'X-Auth-Token' => $this->get('security.token_storage')->getToken()->getUser()->getMeteortoken(),
-                    ),
-                    $this->array2url($form->getData())
-                );
-                dump($response);
-            } catch (Buzz\Exception\RequestException $e) {
-                throw new ServiceUnavailableHttpException(null, "Meteor Service Unavailable, cannot reach the server.");
-            }
-
-            $json = json_decode($response->getContent(), true);
+            $json = $this->get("meteor.browser")->post("event/", $form->getData());
 
             if ($json["status"] == "fail") {
-                dump($json);
                 return array(
                     'form' => $form->createView(),
                 );
@@ -106,30 +63,6 @@ class EventsController extends Controller
         return array(
             'form' => $form->createView(),
         );
-    }
-
-    private function array2url($data = array()){
-        $ret = "";
-        foreach($data as $key => $value){
-            switch(gettype($value)){
-                case "boolean":
-                case "integer":
-                case "double":
-                case "string":
-                case "array":
-                    $ret .= "&" . urlencode((string)$key) . "=" . urlencode((string)$value);
-                    break;
-                case "object":
-                    switch($value instanceof \DateTime){
-                        default:
-                            $ret .= "&" . urlencode((string)$key) . "=" . urlencode($value->format("d/m/Y H:i"));
-                    }
-                    break;
-                default:
-                    throw new Exception("Unknown type to be converted in string");
-            }
-        }
-        return substr($ret, 1);
     }
 
     /**
@@ -182,26 +115,7 @@ class EventsController extends Controller
      */
     public function showAction($id)
     {
-        $browser = new Buzz\Browser();
-        $url = "http".(($this->container->getParameter(
-                'meteor_secure'
-            )) ? 's' : '')."://".$this->container->getParameter('meteor_host').":".(($this->container->getParameter(
-                    'meteor_port'
-                ) == null) ? "3000" : $this->container->getParameter('meteor_port'))."/api/";
-        $response = null;
-        try {
-            $response = $browser->get(
-                $url.'event/'.$id,
-                array(
-                    'X-User-Id' => $this->get('security.token_storage')->getToken()->getUser()->getUserid(),
-                    'X-Auth-Token' => $this->get('security.token_storage')->getToken()->getUser()->getMeteortoken(),
-                )
-            );
-        } catch (Buzz\Exception\RequestException $e) {
-            throw new ServiceUnavailableHttpException(null, "Meteor Service Unavailable, cannot reach the server.");
-        }
-
-        $json = json_decode($response->getContent(), true);
+        $json = $this->get('meteor.browser')->get('event/'.$id);
 
         if ($json["status"] == "fail") {
             throw $this->createNotFoundException('Unable to find Event entity.');

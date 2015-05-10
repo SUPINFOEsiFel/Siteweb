@@ -15,6 +15,12 @@
     <services>
         <service id="meteor_user_provider" class="FEL\AdminBundle\Security\User\MeteorUserProvider">
         </service>
+        <service id="meteor.browser" class="FEL\AdminBundle\Meteor\Api\DefaultBrowser">
+            <argument type="service" id="security.token_storage" />
+            <argument>%meteor_host%</argument>
+            <argument>%meteor_port%</argument>
+            <argument>%meteor_secure%</argument>
+        </service>
     </services>
 
 </container>

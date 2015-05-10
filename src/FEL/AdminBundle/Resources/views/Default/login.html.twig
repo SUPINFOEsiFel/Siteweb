@@ -20,7 +20,7 @@
 
             {# S'il y a une erreur, on l'affiche dans un joli cadre #}
             {% if error %}
-                <div class="alert alert-danger" role="alert"><strong>Error!</strong> {{ error.message }}</div>
+                <div class="alert alert-danger" role="alert"><strong>Error!</strong> {{ error }}</div>
             {% endif %}
 
             <label for="username" class="sr-only">Email address</label>
