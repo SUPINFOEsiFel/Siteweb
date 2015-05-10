@@ -18,6 +18,10 @@ class EventsController extends Controller
      * @Template()
      */
     public function indexAction(){
-        return array();
+        $events = $this->get('meteor.browser')->get('events/', array(), true);
+
+        return array(
+            'events' => $events
+        );
     }
 }

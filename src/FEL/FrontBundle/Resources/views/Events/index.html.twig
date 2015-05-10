@@ -1,0 +1,24 @@
+{% extends "FELFrontBundle:Default:layout.html.twig" %}
+{% block title %}Events{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Events : </h1>
+        {% for e in events.events %}
+
+            <section>
+                <h2>{{ e.name }}</h2>
+                {#<blockquote>
+                    <p>{{ n.content|raw }}</p>
+                    <footer>
+                        <i class="glyphicon glyphicon-time"></i>
+                        <em>{{ n.date|date("l, \\t\\h\\e jS F o \\a\\t g:ia") }}</em>,
+                        from <strong>{{ n.author }}</strong>.
+                    </footer>
+                </blockquote>#}
+            </section>
+
+        {% else %}
+            <div class="alert alert-info" role="alert">Aucun Events n'a été trouvé.</div>
+        {% endfor %}
+    </div>
+{% endblock %}
