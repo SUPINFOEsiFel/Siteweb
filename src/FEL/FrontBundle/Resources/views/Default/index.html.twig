@@ -1,22 +1,149 @@
-{% extends "FELFrontBundle:Default:layout.html.twig" %}
+{% extends "FELFrontBundle::layout.html.twig" %}
+
 {% block body %}
     <div class="container">
-        <h1>Homepage : </h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="{{ path('fel_front_homepage') }}">page d'acceuil</a>
-                </li>
-                <li>
-                    <a href="{{ path('fel_front_news') }}">page d'actualités</a>
-                </li>
-                <li>
-                    <a href="{{ path('fel_front_events') }}">page des événements</a>
-                </li>
-                <li>
+        <div id="bl-main" class="bl-main">
+            <section>
+                <div class="bl-box">
+                    <h2 class="bl-icon bl-icon-about" id="bacwinners">BacWinners</h2>
+                    <img src="{{ asset('bundles/felfront/images/soiree.jpg') }}" id="soiree" />
+                </div>
+                <div class="bl-content">
+                    <h2>BacWinners</h2>
                     <a href="{{ path('fel_admin_homepage') }}">espace membres</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+                    <p>Depuis 24 ans, la Fédération des Étudiants Lyonnais accueille les nouveaux bacheliers avec une soirée d’exception dans tous les haut
+                        lieux des nuits lyonnaises. Premiers pas dans le monde étudiant pour les bacheliers, cette soirée est devenue au fil des années l’événement festif majeur des nuits étudiantes.<Br/> Chaque année, les bacwinners regroupent plus de 5000 lyonnais ! <Br/> Fêter le bac avec nous ? Une évidence…<Br/>
+                        Le concept est simple :<Br/>
+                        - un bracelet à 10 € (et une consommation sans alcool) pour les mineurs ou à 15€ (et une consommation alcoolisée) donne accès à toutes les soirées</Br>
+                        - des navettes GRATUITES permettent de faire les trajets entre les différents lieux en toute sécurité.<Br/>
+                        Plus d’infos sur <a href="http://www.bacwinners.com">www.bacwinners.com</a></p>
+                    <h2>Edition 2014</h2>
+                    <p>L'édition 2014 a eu lieu dans les boîtes suivantes : Le Loft Club, Le Petit Salon (ex Life City), Le Logo, et Le Pop !</p>
+                    <h3>Trailer édition 2014:</h3>
+                    <div id="trailer">
+                        <object type="application/x-shockwave-flash" width="425" height="355" data="https://www.youtube.com/v/OQlrZk1q1Rk">
+                            <param name="movie" value="https://www.youtube.com/v/OQlrZk1q1Rk" />
+                            <param name="wmode" value="transparent" />
+                        </object>
+                        <!--[if lte IE 6 ]>
+                        <embed src="hhttp://www.youtube.com/v/_etwz7NkemE&amp;hl=fr" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed>
+                        <![endif]-->
+                    </div><Br/>
+                    <h2>Edition 2015</h2>
+
+
+
+                </div>
+                <span class="bl-icon bl-icon-close"></span>
+            </section>
+            <section id="bl-work-section">
+                <div class="bl-box">
+                    <h2 class="bl-icon bl-icon-works" id="evenements">ÉVÈNEMENTS</h2>
+                    <img src="{{ asset('bundles/felfront/images/soirée2.jpg') }}" id="soiree2" />
+                </div>
+                <div id="event" class="bl-content">
+                    <h2>Évènements</h2>
+
+                    <a href="{{ path('fel_front_events') }}">page des événements</a>
+                </div>
+                <span class="bl-icon bl-icon-close"></span>
+            </section>
+            <section>
+                <div class="bl-box">
+                    <h2 class="bl-icon bl-icon-blog" id="news">News/Informations</h2>
+                    <img src="{{ asset('bundles/felfront/images/journal.jpg') }}" id="journal" />
+                </div>
+                <div class="bl-content">
+                    <a href="{{ path('fel_front_news') }}">page d'actualités</a>
+                </div>
+                <span class="bl-icon bl-icon-close"></span>
+            </section>
+            <section>
+                <div class="bl-box">
+                    <h2 class="bl-icon bl-icon-contact" id="partenaires">Partenaires</h2>
+                    <img src="{{ asset('bundles/felfront/images/serrageMain.jpg') }}" id="partenaire" />
+                </div>
+                <div class="bl-content">
+                    <h2>Get in touch</h2>
+                    <p>Pinterest semiotics single-origin coffee craft beer thundercats irony, tumblr bushwick intelligentsia pickled. Narwhal mustache godard master cleanse street art, occupy ugh selfies put a bird on it cray salvia four loko gluten-free shoreditch. Occupy american apparel freegan cliche. Mustache trust fund 8-bit jean shorts mumblecore thundercats. Pour-over small batch forage cray, banjo post-ironic flannel keffiyeh cred ethnic semiotics next level tousled fashion axe. Sustainable cardigan keytar fap bushwick bespoke.</p>
+                </div>
+                <span class="bl-icon bl-icon-close"></span>
+            </section>
+
+            <section class="bl-main logo">
+                <div class="bl-box">
+                    <img class="bl-icon bl-icon-FEL" id="logo" src="{{ asset('bundles/felfront/images/logovectoriel.svg') }}" alt="Logo FEL" title="Logo FEL"/>
+                </div>
+                <div class="bl-content">
+
+                    <h3>Présentation</h3>
+                    <p>
+                        La FEL, dans quel but ?
+                        Créée il y a plus de 20 ans, la Fédération des Étudiants Lyonnais a vocation à fédérer le monde associatif étudiant lyonnais.
+
+                        La FEL, quelles origines ?
+                        La FEL trouve ses racines dans la volonté de 7 associations étudiantes de Grandes Écoles et d’Universités de créer un organisme indépendant, apolitique, représentant tous les étudiants lyonnais. Ainsi, l’AE2L, l’Amicale de Pharmacie, l’Association Lumière, le BDE ENTPE, la Corpo EM Lyon, la Corpo Lyon 3 et la Corpo Médecine ont donné naissance à la FEL en 1989.
+
+                        La FEL, au quotidien ?
+                        La FEL travaille toute l’année pour et avec les associations étudiantes. Elle leur permet de disposer d’une aide aussi bien dans leur fonctionnement courant que dans l’organisation d’événements (conseils et formations aux bonnes pratiques associatives des bureaux actuels et à venir, …).
+
+                        La FEL, son importance ?
+                        Grâce au travail des équipes passées, la FEL est devenue l’une des plus importantes fédérations de ville en France. Moteur d’idées et de projets, la FEL est l’interlocuteur privilégié des différentes institutions de par son implication dans la vie étudiante (membre du Conseil de Développement du Grand Lyon).
+
+                        La FEL, en résumé ?
+                        Être une fédération de ville implique une action locale et forte. Depuis sa création, la FEL a conservé les mêmes buts :
+                        • coordonner les actions des associations afin de mettre en place une réflexion commune et un réel partage des compétences et des expériences.
+                        • représenter l’ensemble des étudiants lyonnais auprès des institutions locales.
+                        • agir concrètement à la demande des associations, en particulier pour la défense des intérêts tant matériels que moraux des étudiants.
+                        • informer les étudiants et les lycéens sur l’actualité étudiante par le biais de leurs associations et de publications.
+                    </p>
+                </div>
+                <span class="bl-icon bl-icon-close"></span>
+            </section>
+            <!-- Panel items for the works -->
+            <div class="bl-panel-items" id="bl-panel-work-items">
+                <div data-panel="panel-1">
+                    <div>
+                        <img src="{{ asset('bundles/felfront/images/1.jpg') }}" />
+                        <h3>Fixie bespoke</h3>
+                        <p>Iphone artisan direct trade ethical Austin. Fixie bespoke banh mi ugh, deep v vinyl hashtag. Tumblr gentrify keffiyeh pop-up iphone twee biodiesel. Occupy american apparel freegan cliche. Mustache trust fund 8-bit jean shorts mumblecore thundercats. Pour-over small batch forage cray, banjo post-ironic flannel keffiyeh cred ethnic semiotics next level tousled fashion axe. Sustainable cardigan keytar fap bushwick bespoke.</p>
+                    </div>
+                </div>
+                <div data-panel="panel-2">
+                    <div>
+                        <img src="{{ asset('bundles/felfront/images/2.jpg') }}" />
+                        <h3>Chillwave mustache</h3>
+                        <p>Squid vinyl scenester literally pug, hashtag tofu try-hard typewriter polaroid craft beer mlkshk cardigan photo booth PBR. Chillwave 90's gentrify american apparel carles disrupt. Pinterest semiotics single-origin coffee craft beer thundercats irony, tumblr bushwick intelligentsia pickled. Narwhal mustache godard master cleanse street art, occupy ugh selfies put a bird on it cray salvia four loko gluten-free shoreditch.</p>
+                    </div>
+                </div>
+                <div data-panel="panel-3">
+                    <div>
+                        <img src="{{ asset('bundles/felfront/images/3.jpg') }}" />
+                        <h3>Austin hella</h3>
+                        <p>Ethical cray wayfarers leggings vice, seitan banksy small batch ethnic master cleanse. Pug chillwave etsy, scenester meh occupy blue bottle tousled blog tonx pinterest selvage mixtape swag cosby sweater. Synth tousled direct trade, hella Austin craft beer ugh chambray.</p>
+                    </div>
+                </div>
+                <div data-panel="panel-4">
+                    <div>
+                        <img src="{{ asset('bundles/felfront/images/4.jpg') }}" />
+                        <h3>Brooklyn dreamcatcher</h3>
+                        <p>Fashion axe 90's pug fap. Blog wayfarers brooklyn dreamcatcher, bicycle rights retro YOLO. Wes anderson lomo 90's food truck 3 wolf moon, twee jean shorts. Iphone small batch twee wolf yr before they sold out. Brooklyn echo park cred, portland pug selvage flannel seitan tousled mcsweeney's.</p>
+                    </div>
+                </div>
+                <nav>
+                    <span class="bl-next-work">&gt; Next Project</span>
+                    <span class="bl-icon bl-icon-close"></span>
+                </nav>
+            </div>
+        </div>
+    </div><!-- /container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ asset('bundles/felfront/js/boxlayout.js') }}"></script>
+    <script>
+        $(function() {
+            Boxlayout.init();
+        });
+    </script>
+
 {% endblock %}
