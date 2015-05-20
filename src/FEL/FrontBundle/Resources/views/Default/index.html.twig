@@ -44,7 +44,7 @@
                 <div id="event" class="bl-content">
                     <h2>Évènements</h2>
 
-                    <a href="{{ path('fel_front_events') }}">page des événements</a>
+                    {{ render(controller('FELFrontBundle:Events:index')) }}
                 </div>
                 <span class="bl-icon bl-icon-close"></span>
             </section>
@@ -54,7 +54,7 @@
                     <img src="{{ asset('bundles/felfront/images/journal.jpg') }}" id="journal" />
                 </div>
                 <div class="bl-content">
-                    <a href="{{ path('fel_front_news') }}">page d'actualités</a>
+                    {{ render(controller('FELFrontBundle:News:index')) }}
                 </div>
                 <span class="bl-icon bl-icon-close"></span>
             </section>

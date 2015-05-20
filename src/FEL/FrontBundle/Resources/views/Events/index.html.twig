@@ -1,24 +1,22 @@
-{% extends "FELFrontBundle:Default:layout.html.twig" %}
-{% block title %}Events{% endblock %}
-{% block body %}
-    <div class="container">
-        <h1>Events : </h1>
-        {% for e in events.events %}
+<div id="event" class="bl-content">
 
-            <section>
-                <h2>{{ e.name }}</h2>
-                {#<blockquote>
-                    <p>{{ n.content|raw }}</p>
-                    <footer>
-                        <i class="glyphicon glyphicon-time"></i>
-                        <em>{{ n.date|date("l, \\t\\h\\e jS F o \\a\\t g:ia") }}</em>,
-                        from <strong>{{ n.author }}</strong>.
-                    </footer>
-                </blockquote>#}
-            </section>
+{% for e in events.events %}
 
-        {% else %}
-            <div class="alert alert-info" role="alert">Aucun Events n'a été trouvé.</div>
-        {% endfor %}
-    </div>
-{% endblock %}
+
+
+            <ul id="bl-work-items">
+                <!--<li data-panel="panel-1"><a href="#"><img src="images/1.jpg" id="img1"/></a></li>-->
+
+            </ul>
+            <p>{{ e.name }} <a href="{{ e.link }}">>Informations</a> </br>
+                Date: {{ e.begin }}  </br>
+                Date: {{ e.end }} </br>
+                Lieu: {{ e.address }} </br>
+                {{ e.price }} €
+            </p>
+
+{% else %}
+        <div class="alert alert-info" role="alert">Aucun Events n'a été trouvé.</div>
+{% endfor %}
+
+</div>
