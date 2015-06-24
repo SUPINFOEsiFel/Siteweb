@@ -3,6 +3,7 @@
 namespace FEL\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * OpeContact
@@ -32,6 +33,7 @@ class OpeContact
      * @var string
      *
      * @ORM\Column(name="website", type="string", length=255, nullable=true)
+	 * @Assert\Url()
      */
     private $website;
 
@@ -76,6 +78,14 @@ class OpeContact
      * @ORM\Column(name="faxNumber", type="string", length=255, nullable=true)
      */
     private $faxNumber;
+
+	/**
+	 * @var string
+	 *
+	 * @ORM\Column(name="email", type="string", length=255, nullable=true)
+	 * @Assert\Email()
+	 */
+	private $email;
 
     /**
      * @var string
@@ -278,6 +288,29 @@ class OpeContact
     {
         return $this->faxNumber;
     }
+
+	/**
+	 * Set Email
+	 *
+	 * @param string $email
+	 * @return OpeContact
+	 */
+	public function setEmail($email)
+	{
+		$this->email = $email;
+
+		return $this;
+	}
+
+	/**
+	 * Get email
+	 *
+	 * @return string
+	 */
+	public function getEmail()
+	{
+		return $this->email;
+	}
 
     /**
      * Set notes

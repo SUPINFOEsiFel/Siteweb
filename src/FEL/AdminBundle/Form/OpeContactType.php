@@ -23,6 +23,7 @@ class OpeContactType extends AbstractType
             ->add('city')
             ->add('phoneNumber')
             ->add('faxNumber')
+			->add('email')
             ->add('notes')
         ;
     }
