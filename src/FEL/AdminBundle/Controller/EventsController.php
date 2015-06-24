@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -48,8 +49,10 @@ class EventsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
-            $json = $this->get("meteor.browser")->post("event/", $form->getData());
+			$data = $form->getData();
+			$img = sprintf("data:%s;base64,%s", $data["image"]->getClientMimeType(), base64_encode(file_get_contents($data["image"]->getPathname())));
+			$data["image"] = $img;
+            $json = $this->get("meteor.browser")->post("event/", $data);
 
             if ($json["status"] == "fail") {
                 return array(

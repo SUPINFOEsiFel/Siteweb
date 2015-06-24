@@ -27,6 +27,10 @@
         <table class="table record_properties">
             <tbody>
             <tr>
+                <th class="col-md-2">Image</th>
+                <td><img src="//{{ meteor_host }}:{{ meteor_port }}/upload/{{ meteor.data._id }}{{ meteor.data.imageExtension }}"/></td>
+            </tr>
+            <tr>
                 <th class="col-md-2">Id</th>
                 <td>{{ meteor.data._id }}</td>
             </tr>

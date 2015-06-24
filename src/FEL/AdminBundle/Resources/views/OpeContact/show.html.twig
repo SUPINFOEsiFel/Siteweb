@@ -1,0 +1,86 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+
+{% block title %}Show Opé Contact - Opé. Contacts Management{% endblock %}
+
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/inline-record-actions.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    <div class="jumbotron jumbotron-trianglify">
+        <div class="container"><h1>Gestion des Opé. Contacts</h1></div>
+    </div>
+    <section class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="{{ path('fel_admin_homepage') }}">Admin</a></li>
+            <li><a href="{{ path('opecontact') }}">Opé. Contacts</a></li>
+            <li class="active">#{{ entity.id }}</li>
+        </ol>
+
+        <div class="page-header">
+            <h2>Opé. Contact</h2>
+        </div>
+
+        <table class="table record_properties">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ entity.id }}</td>
+                </tr>
+                <tr>
+                    <th>Societyname</th>
+                    <td>{{ entity.societyName }}</td>
+                </tr>
+                <tr>
+                    <th>Website</th>
+                    <td>{{ entity.website }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ entity.description }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ entity.address }}</td>
+                </tr>
+                <tr>
+                    <th>Zipcode</th>
+                    <td>{{ entity.zipcode }}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{ entity.city }}</td>
+                </tr>
+                <tr>
+                    <th>Phonenumber</th>
+                    <td>{{ entity.phoneNumber }}</td>
+                </tr>
+                <tr>
+                    <th>Faxnumber</th>
+                    <td>{{ entity.faxNumber }}</td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td>{{ entity.notes }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+            <ul class="record_actions">
+            <li>
+                <a href="{{ path('opecontact') }}">
+                    Back to the list
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('opecontact_edit', { 'id': entity.id }) }}">
+                    Edit
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+    <section>
+{% endblock %}

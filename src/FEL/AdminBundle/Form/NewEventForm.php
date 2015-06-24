@@ -24,7 +24,8 @@ class NewEventForm extends AbstractType
             ->add('zipCode', 'integer')
             ->add('city', 'text')
             ->add('country', 'text')
-            ->add('link', 'url');
+            ->add('link', 'url')
+			->add('image', 'file');
     }
 
     /**

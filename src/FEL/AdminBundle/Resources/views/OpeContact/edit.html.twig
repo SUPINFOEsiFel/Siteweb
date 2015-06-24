@@ -1,0 +1,41 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+
+{% form_theme edit_form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block title %}Opé. Contact Edit - Opé. Contacts Management{% endblock %}
+
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/inline-record-actions.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    <div class="jumbotron jumbotron-trianglify">
+        <div class="container"><h1>Gestion des Opé. Contacts</h1></div>
+    </div>
+    <section class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="{{ path('fel_admin_homepage') }}">Admin</a></li>
+            <li><a href="{{ path('opecontact') }}">Opé. Contacts</a></li>
+            <li><a href="{{ path('opecontact_show', {'id': entity.id}) }}">#{{ entity.id }}</a></li>
+            <li class="active">Edit</li>
+        </ol>
+
+        <div class="page-header">
+            <h2>Opé. Contact edit</h2>
+        </div>
+
+        {{ form(edit_form) }}
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('opecontact') }}">
+                    Back to the list
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+    </section>
+{% endblock %}

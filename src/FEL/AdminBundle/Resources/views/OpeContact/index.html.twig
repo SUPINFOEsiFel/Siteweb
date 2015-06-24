@@ -1,0 +1,85 @@
+{% extends "FELAdminBundle:Default:layout.html.twig" %}
+
+{% block title %}Opé Contacts List - Opé. Contacts Management{% endblock %}
+
+{% block appendStylesheets %}
+    {% stylesheets '@FELAdminBundle/Resources/public/css/inline-record-actions.css'
+    '@FELAdminBundle/Resources/public/css/inline-record-action-list.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block appendJavascripts %}
+    {% javascripts '@FELAdminBundle/Resources/public/js/clickable-records.js' %}
+    <script src="{{ asset_url }}" rel="script" type="application/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block body -%}
+    <div class="jumbotron jumbotron-trianglify">
+        <div class="container"><h1>Gestion des Opé. Contacts</h1></div>
+    </div>
+
+    <section class="container">
+        <ol class="breadcrumb">
+            <li><a href="{{ path('fel_admin_homepage') }}">Admin</a></li>
+            <li class="active">Opé. Contacts</li>
+        </ol>
+
+        <div class="page-header">
+            <h2>Opé. Contacts list</h2>
+        </div>
+
+        <table class="table table-striped table-hover records_list">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Societyname</th>
+                    <th>Website</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th>Zipcode</th>
+                    <th>City</th>
+                    <th>Phonenumber</th>
+                    <th>Faxnumber</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('opecontact_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.societyName }}</td>
+                    <td>{{ entity.website }}</td>
+                    <td>{{ entity.description }}</td>
+                    <td>{{ entity.address }}</td>
+                    <td>{{ entity.zipcode }}</td>
+                    <td>{{ entity.city }}</td>
+                    <td>{{ entity.phoneNumber }}</td>
+                    <td>{{ entity.faxNumber }}</td>
+                    <td>{{ entity.notes }}</td>
+                    <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('opecontact_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('opecontact_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('opecontact_new') }}">
+                    Create a new entry
+                </a>
+            </li>
+        </ul>
+    <section>
+    {% endblock %}
