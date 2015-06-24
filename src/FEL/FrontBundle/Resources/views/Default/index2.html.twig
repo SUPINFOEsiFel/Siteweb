@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Layout with Page Transitions</title>
+    <meta name="description" content="Fullscreen Layout with Page Transitions" />
+    <meta name="keywords" content="fullscreen layout, boxes, responsive, page transitions, css transitions, jquery, portfolio, template" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="bl-main" class="bl-main">
+        <section>
+            <div class="bl-box">
+                {% image '@FELFrontBundle/Resources/public/images/soirée.jpg' %}
+                <img src="{{ asset_url }}" alt="Example"/>
+                {% endimage %}
+                <img src="soirée.jpg" id="soiree" />
+            </div>
+            <div class="bl-content">
+                <h1>BacWinners</h1>
+                <p>Depuis 24 ans, la Fédération des Étudiants Lyonnais accueille les nouveaux bacheliers avec une soirée d’exception dans tous les haut
+                    lieux des nuits lyonnaises. Premiers pas dans le monde étudiant pour les bacheliers, cette soirée est devenue au fil des années l’événement festif majeur des nuits étudiantes.<Br/> Chaque année, les bacwinners regroupent plus de 5000 lyonnais ! <Br/> Fêter le bac avec nous ? Une évidence…<Br/></p>
+                <h2>Edition 2015</h2>
+                <p>Le concept est simple :<Br/>
+                    - un bracelet à 10 € (et une consommation sans alcool) pour les mineurs ou à 15€ (et une consommation alcoolisée) donne accès à toutes les soirées</Br>
+                    - des navettes GRATUITES permettent de faire les trajets entre les différents lieux en toute sécurité.<Br/>
+                    Plus d’infos sur <a href="http://www.bacwinners.com">www.bacwinners.com</a></p>
+                <h3>Trailer édition 2015:</h3>
+                <div>
+                    <object id= "trailer" type="application/x-shockwave-flash" width="425" height="355" data="https://www.youtube.com/v/tV7mZkkEGfk">
+                        <param name="movie" value="https://www.youtube.com/v/tV7mZkkEGfk" />
+                        <param name="wmode" value="transparent" />
+                    </object>
+                    <!--[if lte IE 6 ]>
+                    <embed src="hhttp://www.youtube.com/v/_etwz7NkemE&amp;hl=fr" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed>
+                    <![endif]-->
+                </div><Br/>
+                <h2>Edition 2014</h2>
+                <p>L'édition 2014 a eu lieu dans les boîtes suivantes : Le Loft Club, Le Petit Salon (ex Life City), Le Logo, et Le Pop !</p>
+
+
+
+
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section id="bl-work-section">
+            <div class="bl-box">
+                <img src="calendrier1.jpg" id="calendrier" />
+            </div>
+            <div id="event" class="bl-content">
+                <h2>Evenements</h2>
+
+                <ul id="bl-work-items">
+                    <li data-panel="panel-1"><a href="#"><img src="images/1.jpg" id="img1" /></a></li>
+
+                </ul>
+                <p> BRACE YOURSELF  <a href="http://www.ninkasi.fr/musique/agenda.html">>Informations</a> </br>
+                    Date: 12 janvier 2015</br>
+                    Lieu: Ninkasi Kao</br>
+                    22:00/5:00</br>
+                    5.00€
+                </p>
+                <ul id="bl-work-items">
+                    <li data-panel="panel-2"><a href="#"><img src="images/2.jpg" /></a></li>
+
+                </ul>
+                <p> Nuits sonores  <a href="http://www.nuits-sonores.com/">>Informations</a> </br>
+                    Date: 15 mai 2015</br>
+                    Lieu: Marché du gros</br>
+                    22:00/6:00</br>
+                    40.00€
+                </p>
+
+                <ul id="bl-work-items">
+                    <li data-panel="panel-3"><a href="#"><img src="images/3.jpg" /></a></li>
+
+                </ul>
+                <p> Plages electroniques <a href="http://www.plages-electroniques.com/">>Informations</a> </br>
+                    Date: 8 aout 2015</br>
+                    Lieu: Cannes </br>
+                    18:00/06:00</br>
+                    20.00€
+                </p>
+
+                <ul id="bl-work-items">
+                    <li data-panel="panel-4"><a href="#"><img src="images/4.jpg" /></a></li>
+
+                </ul>
+                <p> The Bay Festival <a href="http://thebayfestival.fr/">>Informations</a> </br>
+                    Date: 24 juillet 2015</br>
+                    Lieu: Corse </br>
+                    19:00/07:00</br>
+                    30.00€
+                </p>
+
+
+
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section>
+            <div class="bl-box">
+                <img src="journaux1.jpg" id="journal" />
+            </div>
+            <div class="bl-content">
+                <h2>My Musings</h2>
+                <article>
+                    <h3>Being a Freelance Designer</h3>
+                    <p>Stumptown helvetica cardigan, odd future seitan tattooed flannel. Kale chips direct trade cray beard. 8-bit etsy butcher post-ironic blog lo-fi mcsweeney's, sustainable pickled umami flexitarian DIY ethical plaid trust fund. Wolf cred organic, terry richardson aesthetic four loko occupy vegan chillwave readymade deep... <a href="#">Read more</a></p>
+                </article>
+                <article>
+                    <h3>Working with Photoshop</h3>
+                    <p>Cosby sweater odd future gluten-free actually dreamcatcher. Fixie cray vice sriracha disrupt, lo-fi pitchfork mcsweeney's swag YOLO meh chambray etsy. Keytar sriracha fanny pack church-key hashtag vice blog. 3 wolf moon VHS helvetica, raw denim deep v shoreditch seitan twee... <a href="#">Read more</a></p>
+                </article>
+                <article>
+                    <h3>Making use of Icon Fonts</h3>
+                    <p>Locavore irony gastropub chillwave, butcher meggings flexitarian pinterest master cleanse godard. Intelligentsia pop-up neutra, williamsburg gastropub godard pinterest swag deep v umami lomo. Butcher next level 90's wolf bushwick, narwhal photo booth YOLO kale chips whatever small batch. Meh viral ethical hella cardigan portland, street art mlkshk meggings mixtape kale chips cliche messenger bag pitchfork... <a href="#">Read more</a></p>
+                </article>
+                <article>
+                    <h3>Being a Freelance Designer</h3>
+                    <p>Stumptown helvetica cardigan, odd future seitan tattooed flannel. Kale chips direct trade cray beard. 8-bit etsy butcher post-ironic blog lo-fi mcsweeney's, sustainable pickled umami flexitarian DIY ethical plaid trust fund. Wolf cred organic, terry richardson aesthetic four loko occupy vegan chillwave readymade deep... <a href="#">Read more</a></p>
+                </article>
+                <article>
+                    <h3>Working with Photoshop</h3>
+                    <p>Cosby sweater odd future gluten-free actually dreamcatcher. Fixie cray vice sriracha disrupt, lo-fi pitchfork mcsweeney's swag YOLO meh chambray etsy. Keytar sriracha fanny pack church-key hashtag vice blog. 3 wolf moon VHS helvetica, raw denim deep v shoreditch seitan twee... <a href="#">Read more</a></p>
+                </article>
+                <article>
+                    <h3>Making use of Icon Fonts</h3>
+                    <p>Locavore irony gastropub chillwave, butcher meggings flexitarian pinterest master cleanse godard. Intelligentsia pop-up neutra, williamsburg gastropub godard pinterest swag deep v umami lomo. Butcher next level 90's wolf bushwick, narwhal photo booth YOLO kale chips whatever small batch. Meh viral ethical hella cardigan portland, street art mlkshk meggings mixtape kale chips cliche messenger bag pitchfork... <a href="#">Read more</a></p>
+                </article>
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section>
+            <div class="bl-box">
+
+                <img src="main1.jpg" id="mains" />
+            </div>
+            <div class="bl-content">
+                <h2> Partenaires </h2>
+
+                <div >
+                    <a href = "http://http://www.com-over.com"><img class="row" src="images\final\com'over_final.png"></a>
+                    <a href = "http://www.habitat-humanisme.org/"><img class="row" src="images\final\habitat_humanisme_final.png"></a>
+                    <a href = "https://www.permigo.com/"><img class="row" src="images\final\permigo_final.png"></a>
+                    <a href = "http://www.rhonealpes.fr/"><img class="row" src="images\final\rhones_alpes_final.png"></a>
+                    <a href = "http://www.radioscoop.com/"><img class="row" src="images\final\scoop_final.png"></a>
+                    <a href = "http://smerra.fr/"><img class="row" src="images\final\smerra_final.png"></a>
+                    <a href = "https://www.societegenerale.fr/"><img class="row" src="images\final\societe_generale_final.png"></a>
+                    <a href = "http://www.studelites.com/"><img class="row" src="images\final\studelites_final.png"></a>
+                    <a href = "http://www.lyon.fr"><img class="row" src="images\final\ville_de_lyon.png"></a>
+                    <a href = "http://woodstower.com/"><img class="row" src="images\final\woodstower_final.png"></a>
+                    <a href = "http://www.pathe.fr/"><img class="row" src = "images\final\pathe_final.png"></a>
+                    <a href = "http://megazonelyon.com/"><img class="row" src = "images\final\megazone_final.png"></a>
+                </div>
+            </div>
+            <span class="bl-icon bl-icon-close"></span>
+        </section>
+        <section class="logo">
+            <div class="bl-box">
+                <img class="bl-icon bl-icon-FEL" id="logo" src="logovectoriel.png" alt="Logo FEL" title="Logo FEL"/>
+            </div>
+            <div class="bl-content">
+                <div><img id="imagefel"  src="logovectoriel.png" alt="Logo FEL" title="Logo FEL"/></div>
+                <div class="content-fel">
+
+                    <h3>Présentation</h3>
+                    <p>
+                    <h4>La FEL, dans quel but ?</h4>
+                    Créée il y a plus de 20 ans, la Fédération des Étudiants Lyonnais a vocation à fédérer le monde associatif étudiant lyonnais.<br/><br/>
+
+                    <h4>La FEL, quelles origines ?</h4>
+                    La FEL trouve ses racines dans la volonté de 7 associations étudiantes de Grandes Écoles et d’Universités de créer un organisme indépendant, apolitique, représentant tous les étudiants lyonnais. Ainsi, l’AE2L, l’Amicale de Pharmacie, l’Association Lumière, le BDE ENTPE, la Corpo EM Lyon, la Corpo Lyon 3 et la Corpo Médecine ont donné naissance à la FEL en 1989.<br/><br/>
+
+                    <h4>La FEL, au quotidien ?</h4>
+                    La FEL travaille toute l’année pour et avec les associations étudiantes. Elle leur permet de disposer d’une aide aussi bien dans leur fonctionnement courant que dans l’organisation d’événements (conseils et formations aux bonnes pratiques associatives des bureaux actuels et à venir, …).<br/><br/>
+
+                    <h4>La FEL, son importance ?</h4>
+                    Grâce au travail des équipes passées, la FEL est devenue l’une des plus importantes fédérations de ville en France. Moteur d’idées et de projets, la FEL est l’interlocuteur privilégié des différentes institutions de par son implication dans la vie étudiante (membre du Conseil de Développement du Grand Lyon).<br/><br/>
+
+                    <h4>La FEL, en résumé ?</h4>
+                    Être une fédération de ville implique une action locale et forte. Depuis sa création, la FEL a conservé les mêmes buts :
+                    <ul>
+                        <li>coordonner les actions des associations afin de mettre en place une réflexion commune et un réel partage des compétences et des expériences.</li>
+                        <li>représenter l’ensemble des étudiants lyonnais auprès des institutions locales. </li>
+                        <li>agir concrètement à la demande des associations, en particulier pour la défense des intérêts tant matériels que moraux des étudiants.</li>
+                        <li>informer les étudiants et les lycéens sur l’actualité étudiante par le biais de leurs associations et de publications.</li>
+                    </ul>
+                    <h4>Administrateurs</h4>
+
+                    Fédé K’to
+                    <p>
+                    <h5>La F&eacuted&eacute K&#039to est la F&eacuted&eacuteration des Etudiants de l&#039Universit&eacute Catholique de Lyon, une association qui a pour vocation d&#039aider et de repr&eacutesenter la diversit&eacute des &eacutetudiants de l&#039Universit&eacute. Elle a pour mission de cr&eacuteer une unit&eacute entre les diff&eacuterents BDE et associations appartenant &agrave l&#039Universit&eacute Catholique de Lyon. <br/>
+
+                        Nous sommes une &eacutequipe d&#039&eacutetudiants, venant des diff&eacuterents p&#244les de l&#039Universit&eacute, volontaires et b&eacuten&eacutevoles pour faire le lien entre les &eacutetudiants et l&#039administration. <br/>
+
+                        Nous repr&eacutesentons les &eacutetudiants aupr&#232s de l&#039administration et du rectorat. Nous organisons tout au long de l&#039ann&eacutee des &eacutev&eacutenements avec les BDE qui rythment la vie &eacutetudiante &agrave l&#039UCLy et permettent &agrave nos &eacutetudiants de rencontrer les &eacutetudiants d&#039autres fili&#232res.
+
+                        Nous organisons chaque ann&eacutee de nombreux &eacutev&#232nements dont le principal est le CHALLENGE INTER&#8211ECOLES au cours duquel les &eacutecoles de l&#039Universit&eacute Catholique de Lyon s&#039affrontent  pendant deux jours autour de chor&eacutegraphies et jeux. <br/>
+
+                        Nous travaillons r&eacuteguli&#232rement avec la FEL pour les assister dans l&#039organisation de leurs &eacutev&#232nements (Bacwinners, soir&eacutees inter&#8211associations, Salon de l&#039&eacutetudiant...) qui vise &agrave cr&eacuteer un sentiment de coh&eacutesion entre les associations Lyonnaises.
+                    </p>
+                    <h5>&laquo Pour les curieux &raquo</h5>
+                    <p><h5>
+                        Visionnez sur www.youtube.fr les vid&eacuteos du Challenge pour d&eacutecouvrir ce qui vous attend !
+                        RDV sur la chaine vid&eacuteos : &laquo lafedektolyon &raquo. <br/>
+                    </p></h5>
+                    <h5>O&ugrave nous trouver ?</h5>
+                    <p><h5>
+                        A la fac sur le site Carnot, dans le local qui se situe dans le foyer des &eacutetudiants.
+                        Sur notre page Facebook: F&eacuted&eacute K&#039to.
+                        Par mail : <a>fede.ktolyon@gmail.com</a> <br/>
+                    </p></h5>
+                    <h5>Nos &eacutev&#232nements</h5>
+                    <p><h5>
+                        &#8211 Aide &agrave l&#039organisation de la Rentr&eacutee des Etudiants de l&#039UCLy
+                        &#8211 Soir&eacutee de la Rentr&eacutee des Etudiants de l&#039UCLy
+                        &#8211 Soir&eacutee d&#039Ouverture du Challenge.
+                        &#8211 Challenge Inter&#8211&eacutecoles.
+                        &#8211 Soir&eacutee de Cl&#244ture du Challenge.
+                        &#8211 Agendas de l&#039Universit&eacute Catholique de Lyon.
+                        &#8211 Organisation des Rencontres Universitaires Inter&#8211Cathos RUIC (ayant lieu tous les 2ans).
+                    </p></h5>
+                    <h5>Pr&eacutesentation de l&#039&eacutequipe 2015</h5>
+                    <p><h5>
+                        <ul>
+                            <li>St&eacutephane RIBEIRO DE SOUZA &#8211 Pr&eacutesident &#8211 Lettres Modernes
+                                @ <a>stephane_rds@hotmail.fr</a>
+                                Tel: 06 87 69 42 92 </li> <br/>
+
+                            <li>Perrine BERTHIER &#8211 Vice&#8211pr&eacutesidente Interne &#8211 ESTRI
+                                @ <a>perrine.berthier@gmail.com</a>
+                                Tel: 06 73 17 87 54</li> <br/>
+
+                            <li>Arnaud NATIN &#8211 Tr&eacutesorier &#8211 IFTLM
+                                @ <a>stendorial@gmail.com</a>
+                                Tel: 06 31 46 68 80</li> <br/>
+
+                            <li>Cl&eacutemence HOMINAL &#8211 Secr&eacutetaire &#8211 ESTRI
+                                @ <a>c.hominal@live.fr</a>
+                                Tel: 06 98 33 77 62</li> <br/>
+
+                            <li>Antoine JARRY &#8211 VP Partenariats &#8211 ESTBB
+                                @ <a>antoine.jarry@estbb.ucly.fr</a>
+                                Tel: 06 59 53 94 38</li> <br/>
+
+                            <li>Beatriz LALANDA SALDANA &#8211 VP Communication &#8211 ESTRI
+                                @ <a>blalanda1994@hotmail.com</a>
+                                Tel : 07.50.37.94.63</li> <br/>
+
+                            <li>Tsiresimiandra AINA &#8211 Membre actif &#8211 Th&eacuteologie
+                                @ <a>aba&#8211aina@hotmail.fr</a>
+                                Tel: 06 35 23 23 06</li>
+                    </p></h5>
+                    Corpo Lyon 3 <br/>
+                    <p><h5>
+                        Fond&eacutee en 1875, la Corpo Lyon 3 anime le campus de l&#039universit&eacute Lyon 3 Jean Moulin et am&eacuteliore le quotidien de ses &eacutetudiants.
+                        En plus de ses conseils, informations et bons plans, elle repr&eacutesente au sein des conseils universitaires les id&eacuteaux de r&eacuteussite et d&#039&eacutepanouissement dans les &eacutetudes, tout en conservant une ligne apolitique, aconfessionnelle et asyndicale.
+                        Elle participe &eacutegalement au prestige de l&#039universit&eacute en organisant chaque ann&eacutee pour les &eacutetudiants et les institutionnels de toute la France le plus grand gala universitaire du pays : le Bal du Droit.
+                        Chaque jour, elle aide les &eacutetudiants et les propulse vers la vie active en leur donnant des astuces, en organisant des colloques avec des professionnels en leur permettant de suivre l&#039actualit&eacute juridique et universitaire gr&#226ce &agrave la Feuille de Chou, le journal &eacutetudiant de Lyon 3 !
+                        Source d&#039harmonie, d&#039innovation, de rencontres int&eacuteressantes et de nouvelles exp&eacuteriences au sein de Lyon 3, n&#039h&eacutesitez pas &agrave adh&eacuterer &agrave l&#039association pour profiter de tous ces avantages !
+                        <br/>
+                        Adresse : 6 rue Rollet, 69008 <br/>
+                        Lyon T&eacutel&eacutephone : 04 78 78 72 47 <br/>
+                        Mail : contact@corpolyon3.com <br/>
+                    </p></h5>
+                    Biosphère  <br/>
+                    Isostéo  <br/>
+                    AE2L  <br/>
+                    IUT Lyon 3  <br/>
+                    Gadz (Cluny)  <br/>
+                    Sciences Po  <br/>
+                    <p><h5>
+                        Le BDE de Sciences Po Lyon a, comme tout BDE, pour objectif de f&eacuted&eacuterer les &eacutetudiants de toutes les promos. Cela passe par des &eacutev&#232nements r&eacutepandus dans toutes les &eacutecoles, comme le Week&#8211End d&#039int&eacutegration, diff&eacuterents soir&eacutees, ou le Gala de fin d&#039ann&eacutee . N&eacuteanmoins notre but est aussi de refl&eacuteter l&#039esprit de l&#039&eacutecole et de mettre en valeurs les diff&eacuterentes associations de l&#039IEP.  Notre vision du BDE est aussi de nous ouvrir vers l&#039ext&eacuterieur via la FEL ou le CHELS (Coll&#232ge des Hautes Etudes en Science[s]) dont Sciences Po est membre. Nous avons aussi &agrave coeur de venir en aide &agrave ceux qui connaissent apr&#232s nous le stress du concours, via l&#039organisation d&#039un &laquoPack R&eacuteussite&raquo comprenant h&eacutebergement, restauration et transports pour les candidats passant le concours &agrave Lyon. <br/>
+
+                        <li>Pr&eacutesidente: <br/>
+                            Claire Trentalaud
+                            claire.trentalaud@sciencespo&#8211lyon.fr
+                            07 60 65 28 35</li>
+                        <li>Vice&#8211Pr&eacutesident: <br/>
+                            Samuel Quezel
+                            samuel.quezel@sciencespo&#8211lyon.fr
+                            07 81 28 46 27</li>
+                        <li>Secr&eacutetaire: <br/>
+                            Martin Bellot
+                            martin.bellot@sciencespo&#8211lyon.fr
+                            07 86 57 24 49</li>
+                        <li>Tr&eacutesorier: <br/>
+                            Sacha Gutbraut
+                            sacha.gutbraut@sciencespo&#8211lyon.fr
+                            06 43 67 80 13</li>
+
+                    </p></h5>
+                    INSA Lyon  <br/>
+                    <p><h5>Le BdE INSA Lyon s&#039occupe de la vie associative, des &eacutev&eacutenements, et des services aux &eacutetudiants  au sein de l&#039INSA Lyon. Il travaille ainsi avec les quelques 110 associations de l&#039INSA mais aussi avec l&#039administration. <br/>
+                        Evenements majeurs :
+                        Gala, Bal, High Five, Raid, Int&eacutegration, Campagne.</p></h5>
+                    <p><h5>Bureau actuel :<ul>
+                            <li>Pr&eacutesident : Luce Brigaud bde.president@insa&#8211lyon.fr</li>
+                            <li>VP : Antonin Barbet bde.vp@insa&#8211lyon.fr</li>
+                            <li>Tr&eacutesorier : Antoine Fagot</li>
+                            <li>Secr&eacutetaire G&eacuten&eacuteral : Josselin Dugue</li>
+                            <li>Ext : Arthur Raynal bde.vpext@insa&#8211lyon.fr</li>
+                            <li>Sponso : Pauline Giraudeau</li>
+                            <li>Com : Cyril Canete</li>
+                            <li>Services : Etienne Vauquelin</li>
+                            <li>Vie associative : Paul Baudry</li> <br/>
+                    </p></h5>
+                    ENTPE  <br/>
+                    EM Petit Paumé <br/>
+                    <p><h5>
+                        Le Petit Paum&eacute, cr&eacute&eacute en 1968, a pour vocation principale de concevoir et de distribuer un guide critique et gratuit de la ville de Lyon.
+                        Pour cela, l&#039association teste tous les restaurants, bars et commerces qu&#039elle entend voir figurer dans son guide annuel. Chacun de ses 28 membres est &agrave la fois testeur et r&eacutedacteur &agrave part enti&#232re, m&#202me si les activit&eacutes de l&#039association se r&eacutepartissent en 17 commissions dans lesquelles chacun se sp&eacutecialise. <a href="http://www.petitpaume.com/">Le Petit Paum&eacute</a> <br/> s&#039est install&eacute petit &agrave petit comme le guide pour trouver un restaurant &agrave Lyon. <br/>
+
+                        Disposant d&#039un budget de 650 000 euros, le Petit Paum&eacute est la deuxi&#232me association &eacutetudiante de France en terme de moyens financiers, ce qui lui permet de faire imprimer chaque ann&eacutee le premier city guide de France &agrave 300 000 exemplaires dont la moiti&eacute est distribu&eacutee lors du lancement officiel place Bellecour et le reste lors des lancements Grand Lyon et lors du Village du Petit Paum&eacute. Ce guide est tr&#232s attendu des lyonnais et les chiffres IPSOS 2012 d&eacutemontre une notori&eacutet&eacute tr&#232s ancr&eacutee du guide &agrave Lyon. <br/>
+
+                        <li>Pr&eacutesident : Cl&eacutement Foltzer / clement.foltzer@petitpaume.com</li>
+                        <li>Vice&#8211Pr&eacutesidente:ArianeTournier/ariane.tournier@petitpaume.com</li> <br/>
+
+                        <li>Tr&eacutesorier : Nicolas Wrobel / nicolas.wrobel@petitpaume.com</li>
+                        <li>Vice&#8211Tr&eacutesori&#232re : Maud G&eacutenard / maud.genard@petitpaume.com</li>
+                        <li>Secr&eacutetaire G&eacuten&eacuterale : Charlotte Lacombe / charlotte.lacombe@petitpaume.com</li>
+                        <li>Secr&eacutetaire G&eacuten&eacuteral : Thomas Voillot / thoma.voillot@petitpaume.com</li><br/>
+
+
+                    </p></h5>
+                    AGESSA  <br/>
+                    ESI <br/>
+                    <p><h5>Qui sommes-nous ?
+
+                        <p><h5>Le BDE ESI Lyon regroupe des jeunes de 19 à 24 ans voulant expérimenter le bénévolat à travers une bonne ambiance en organisant des événements pour les étudiants de l’école Supinfo.
+                            Le BDE mélange plusieurs promotions de notre école ce qui permet un large point de vue final lors d’organisation d’événements.</p></h5>
+
+                    <p><h5>Notre objectif est de faire sortir les étudiants en leur proposant de s’échapper de leur ambiance de travail avec des sorties nocturnes, des apéritifs, des repas, des événements se rapprochant du milieu informatique…
+                        Nous sommes membres actifs et travaillons avec la FEL. C’est ce qui nous a permis d’élargir notre réseau de BDE. On a pu observer le fonctionnement des autres écoles et partager nos idées, nos réseaux et notre envie de profiter de la vie étudiante.
+                        Nous sommes les concepteurs du site et applications mobiles de la FEL. Ce projet a réuni une vingtaine d’étudiants tous les mercredis soirs de 18h à 22h pendant 5 mois.</p></h5>
+
+
+                    <h5>Où nous trouver ?</h5>
+
+                    <p><h5>La meilleure façon de nous rencontrer est de passer par Facebook à l’adresse :
+                        https://www.facebook.com/EsiLyon?fref=ts
+
+                        Vous pouvez nous poser une question ou nous proposer n’importe quel type d’événement en nous envoyant un message. La réponse sera rapide.
+                        Nous organisons nos événements mais aimons participer à l’élaboration des autres.
+                        Nous sommes disponibles et ouverts à tout et à tous.
+
+                        Notre campus se situe 16 Rue Jean Desparmet à Lyon 8.</p></h5>
+
+
+
+                    <p><h5>hNos actions :<ul>
+
+                            <li>Projet du site et des applications mobiles pour les associations de la FEL.</li>
+                            <li>Partenariat avec Domino’s Pizza avec des réductions de 50%.</li>
+                            <li>Apéritifs pour les soirées « laboratoires » au sein de l’école.</li>
+                            <li>Organisation de la soirée « Good Bye M2 ».</li>
+                            <li>Organisation d’un tournoi de Cosplay dans l’école.</li>
+                            <li>Organisation Journée/Soirée d’intégration.</li>
+                            <li>Organisation d’une soirée Galettes des Rois.</li>
+                            <li>Décoration du campus pour les fêtes de Noël.</li>
+                            <li>Organisation du Week-End D’intégration à Center Park.</li>
+                    </p></h5>
+
+
+                    <p><h5>L’équipe :<ul>
+
+                            <li>Matthieu Guillot : Pr&eacute;sident : matthieu.guillot@supinfo.com</li>
+                            <li>Mehdi Zannettacci : Vice-Pr&eacute;sident : mehdi.zanettacci@supinfo.com</li>
+                            <li>Alban Poirel : Tr&eacute;sorier : alban.poirel@supinfo.com</li>
+                    </p></h5>
+                    </p></h5>
+
+
+                    <h4>Membres</h4>
+
+                    BDE Sciences K’to <br/>
+                    BDE Lettres K’to <br/>
+                    BDE Psycho K’to <br/>
+                    BDE Théologie K’to <br/>
+                    BDE ILCF K’to <br/>
+                    BDE Droit K’to <br/>
+                    BDE IDHL(institut des droits de l’Homme) K’to <br/>
+                    BDE ESDES K’to <br/>
+                    BDE ESTRI K’to <br/>
+                    BDE Philosophie K’to <br/>
+                    BDE EMERLY <br/>
+                    OGSE
+                    <p><h5><b>Objectifs GSE : association &eacutetudiante du centre EUGINOV</b>
+                        OGSE a pour but de d&eacutevelopper et faire vivre la vie &eacutetudiante au sein du centre EUGINOV (centre de formation de l&#039IAE Lyon) en favorisant les rapports entre les &eacutetudiants par l&#039organisation d&#039&eacutev&#232nements. Son objectif est &eacutegalement d&#039int&eacutegrer et d&#039accompagner les &eacutetudiants tout au long de leur cursus.<br/>
+                        L&#039association permet aux &eacutetudiants de ces formations de r&eacutealiser des projets de groupe que nomm&eacutes &laquo Missions IVP &raquo (Insertion dans la vie professionnelle). Ces missions font partie int&eacutegrante des formations car les d&eacutemarches et comp&eacutetences mises en oeuvre sont tuteur&eacutees par les enseignants du centre EUGINOV.<br/>
+
+                        <br/><table border="1" style="width:100%">
+                            <tr>
+                                <td>Professionels</td>
+                                <td>Attractif</td>
+                            <tr>
+                                <td>La <b>Journ&eacutee Efficacit&eacute +</b>, un colloque d&#039une journ&eacutee afin d&#039&eacutechanger sur un th&#232me d&#039actualit&eacute du domaine du management. Le <b>Forum Entreprises</b>, un cocktail permettant la rencontre entre enseignants, tuteurs de stage et &eacutetudiants <br/>
+                                    <b>Promouvoir les dipl&#244mes du centre EUGINOV</b> en participant aux divers salons et portes ouvertes <br/>
+                                    </b>R&eacuteseau et Anciens</b>, r&eacuteunir actuels et anciens &eacutetudiants dans un esprit d&#039&eacutechanges d&#039exp&eacuteriences </td>
+
+                                <td><b>Activit&eacutes et Coh&eacutesion</b>, organisation de soir&eacutees &eacutetudiantes et de s&eacutejours (Ski, etc.)<br/>
+
+                                    <b>Challenge sportif</b>, un projet regroupant les &eacutetudiants autour d&#039une valeur fondamentale, le sport et l&#039esprit d&#039&eacutequipe. Dont un challenge sportif, <b>Sport&#039Inov</b>, permettant aux &eacutetudiants de l&#039IAE de se confronter autour d&#039un grand tournoi sportif<br/>
+
+                                    <b>Demain, Tous Responsables !</b>, organisation de formation PSC1 pour les &eacutetudiants de l&#039IAE &agrave prix minimes</td>
+                            <tr>
+                        </table><br/>
+
+                        Bien que l&#039association soit destin&eacutee aux &eacutetudiants et dipl&#244m&eacutes du Centre EUGINOV, les &eacutev&#232nements sont bien s&#251r ouverts &agrave tout projet de collaboration avec d&#039autres &eacutetudiants ou professionnels. Les projets sont r&eacuteguli&#232rement en partenariats avec l&#039IAE et ses diverses associations. <br/>
+
+                        Les membres de l&#039association : <br/>
+
+                        <b>Elora PETIT</b>
+                        Pr&eacutesidente
+                        president@ogse.net <br/>
+
+                        <b>Mattis PEPIN</b>
+                        Vice&#8211pr&eacutesident, responsable de la communication et des partenariats
+                        partenariat@ogse.net <br/>
+
+                        <b>Emma DURAND</b>
+                        Secr&eacutetaire G&eacuten&eacuterale
+                        secretaire@ogse.net <br/>
+
+                        <b>Caroline LIEVRE</b>
+                        Tr&eacutesori&#232re
+                        tresoriere@ogse.net <br/>
+
+                        Retrouvez nous sur les r&eacuteseaux sociaux :
+                        Facebook : Objectifs GSE
+                        Instagram : @objectifsgse
+                        Site internet : <a href="http://www.ogse.net">OGSE</a> <br/>
+
+                    </p></h5>
+                    That’s IAE <br/>
+                    BDS Sciences Po <br/>
+                    BDE CEESO Lyon <br/>
+                    </p>
+                </div>
+
+                <p>
+                <div id="myForm">
+                    <form action="" method="">
+                        <p>
+                        <fieldset id="cadre">
+                            <legend id="legend">Contactez-nous !</legend>
+                            <p>
+                                <label for="Objet" class="label">Objet : </label>
+                                <input type="text" name="Objet"/>
+                            </p>
+                            <p>
+                                <label for="Email" class="label">Email : </label>
+                                <input type="email" name="Email"/>
+                            </p>
+                            <p>
+                                <label class="label">Commentaire :</label>
+                                <textarea cols="50" rows="10" id="com" name="comments">Ecrivez votre message</textarea>
+                            </p>
+                            <p>
+                                <input type="submit" id="submit" value=" Envoyer  "/>
+                                <input type="reset" value=" Effacer "/>
+                            </p>
+                        </fieldset>
+                </p>
+                </form>
+            </div>
+            <div id="noms">
+                <table>
+                    <tr>
+                        <th colspan="2">Membres</th>
+                    </tr>
+                    <tr>
+                        <td class="td">Président</td>
+                        <td class="td">JANNIN Pierrick</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Vice-Président Interne</td>
+                        <td class="td">GINOT Maxime</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Trésorière</td>
+                        <td class="td">JANNIN Othilie</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Vice-Présidente Communication</td>
+                        <td class="td">MANGIALENTI Claire</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Vice-Présidente Partenariats</td>
+                        <td class="td">CHAMAM Rym</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Vice-Président Partenariats</td>
+                        <td class="td">PEPIN Matthis</td>
+                    </tr>
+                    <tr>
+                        <td class="td">Secrétaire Général</td>
+                        <td class="td">MARCOS Damien</td>
+                    </tr>
+                </table>
+            </div>
+
+            </p>
+
+
+    </div>
+    <span class="bl-icon bl-icon-close"></span>
+    </section>
+    <!-- Panel items for the works -->
+    <div class="bl-panel-items" id="bl-panel-work-items">
+        <div data-panel="panel-1">
+            <div>
+                <img src="images/1.jpg" />
+                <h3>Fixie bespoke</h3>
+                <p>Iphone artisan direct trade ethical Austin. Fixie bespoke banh mi ugh, deep v vinyl hashtag. Tumblr gentrify keffiyeh pop-up iphone twee biodiesel. Occupy american apparel freegan cliche. Mustache trust fund 8-bit jean shorts mumblecore thundercats. Pour-over small batch forage cray, banjo post-ironic flannel keffiyeh cred ethnic semiotics next level tousled fashion axe. Sustainable cardigan keytar fap bushwick bespoke.</p>
+            </div>
+        </div>
+        <div data-panel="panel-2">
+            <div>
+                <img src="images/2.jpg" />
+                <h3>Chillwave mustache</h3>
+                <p>Squid vinyl scenester literally pug, hashtag tofu try-hard typewriter polaroid craft beer mlkshk cardigan photo booth PBR. Chillwave 90's gentrify american apparel carles disrupt. Pinterest semiotics single-origin coffee craft beer thundercats irony, tumblr bushwick intelligentsia pickled. Narwhal mustache godard master cleanse street art, occupy ugh selfies put a bird on it cray salvia four loko gluten-free shoreditch.</p>
+            </div>
+        </div>
+        <div data-panel="panel-3">
+            <div>
+                <img src="images/3.jpg" />
+                <h3>Austin hella</h3>
+                <p>Ethical cray wayfarers leggings vice, seitan banksy small batch ethnic master cleanse. Pug chillwave etsy, scenester meh occupy blue bottle tousled blog tonx pinterest selvage mixtape swag cosby sweater. Synth tousled direct trade, hella Austin craft beer ugh chambray.</p>
+            </div>
+        </div>
+        <div data-panel="panel-4">
+            <div>
+                <img src="images/4.jpg" />
+                <h3>Brooklyn dreamcatcher</h3>
+                <p>Fashion axe 90's pug fap. Blog wayfarers brooklyn dreamcatcher, bicycle rights retro YOLO. Wes anderson lomo 90's food truck 3 wolf moon, twee jean shorts. Iphone small batch twee wolf yr before they sold out. Brooklyn echo park cred, portland pug selvage flannel seitan tousled mcsweeney's.</p>
+            </div>
+        </div>
+        <nav>
+            <span class="bl-next-work">&gt; Next Project</span>
+            <span class="bl-icon bl-icon-close"></span>
+        </nav>
+    </div>
+</div>
+<div >
+    <a id="adherent" role="button" href="#infos">Accès Adhérent > </a>
+</div>
+<div>
+    <a id="twitter" href="#infos"><img src="images/logos.png"></a>
+</div>
+
+</body>
+</html>

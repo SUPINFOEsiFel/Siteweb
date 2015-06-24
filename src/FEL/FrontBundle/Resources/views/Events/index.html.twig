@@ -3,15 +3,13 @@
 {% for e in events.events %}
 
 
-
             <ul id="bl-work-items">
-                <!--<li data-panel="panel-1"><a href="#"><img src="images/1.jpg" id="img1"/></a></li>-->
+                <li data-panel="panel-1"><a href="#"><img src="//{{ meteor_host }}:{{ meteor_port }}/upload/{{ e._id }}{{ e.imageExtension }}" id="img1" /></a></li>
 
             </ul>
-            <p>{{ e.name }} <a href="{{ e.link }}">>Informations</a> </br>
-                Date: {{ e.begin }}  </br>
-                Date: {{ e.end }} </br>
-                Lieu: {{ e.address }} </br>
+            <p> {{ e.name }}  <a href="{{ e.link }}">>Informations</a> </br>
+                Date: {{ e.begin }} - {{ e.end }}</br>
+                Lieu: {{ e.address }}</br>
                 {{ e.price }} €
             </p>
 
