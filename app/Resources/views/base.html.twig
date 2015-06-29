@@ -4,14 +4,17 @@
         <meta charset="UTF-8" />
         <title>{% block title %}FEL{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/felfront/css/component.css') }}" />
-            <script src="{{ asset('bundles/felfront/js/modernizr.custom.js') }}"></script>
+            <meta name="description" content="La FEL (Fédération des Étudiants Lyonnais) est une association pour la cohésion et le développement de l'associatif des étudiants de Lyon. Elle trouve ses racines en 1989 dans la volonté de 7 associations étudiantes de Grandes Écoles et d’Universités de créer un organisme indépendant, apolitique, représentant tous les étudiants lyonnais.">
+            <meta name="keywords" content="fédération;étudiants;lyonnais;lyon;association">
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/felfront/css/component.min.css') }}" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/felfront/js/modernizr.custom.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
 
