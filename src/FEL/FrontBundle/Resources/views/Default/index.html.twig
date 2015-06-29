@@ -8,11 +8,11 @@
             <section>
                 <div class="bl-box">
                     {% image '@FELFrontBundle/Resources/public/images/soirée.jpg' %}
-                    <img src="{{ asset_url }}" id="soiree"/>
+                    <img src="{{ asset_url }}" id="soiree" alt="BacWinners (r)"/>
                     {% endimage %}
                 </div>
                 <div class="bl-content">
-                    <h1>BacWinners</h1>
+                    <h1>BacWinners<sup>&reg;</sup></h1>
                     <p>Depuis 24 ans, la Fédération des Étudiants Lyonnais accueille les nouveaux bacheliers avec une soirée d’exception dans tous les haut
                         lieux des nuits lyonnaises. Premiers pas dans le monde étudiant pour les bacheliers, cette soirée est devenue au fil des années l’événement festif majeur des nuits étudiantes.<Br/> Chaque année, les bacwinners regroupent plus de 5000 lyonnais ! <Br/> Fêter le bac avec nous ? Une évidence…<Br/></p>
                     <h2>Edition 2015</h2>
@@ -39,7 +39,7 @@
             <section id="bl-work-section">
                 <div class="bl-box">
                     {% image '@FELFrontBundle/Resources/public/images/calendrier1.jpg' %}
-                    <img src="{{ asset_url }}" id="calendrier"/>
+                    <img src="{{ asset_url }}" id="calendrier" alt="Événement"/>
                     {% endimage %}
                 </div>
                 <div id="event" class="bl-content">
@@ -53,7 +53,7 @@
             <section>
                 <div class="bl-box">
                     {% image '@FELFrontBundle/Resources/public/images/journaux1.jpg' %}
-                    <img src="{{ asset_url }}" id="journal"/>
+                    <img src="{{ asset_url }}" id="journal" alt="Informations"/>
                     {% endimage %}
                 </div>
                 <div class="bl-content">
@@ -65,25 +65,25 @@
             <section>
                 <div class="bl-box">
                     {% image '@FELFrontBundle/Resources/public/images/main1.jpg' %}
-                    <img src="{{ asset_url }}" id="mains"/>
+                    <img src="{{ asset_url }}" id="mains" alt="Partenaires"/>
                     {% endimage %}
                 </div>
                 <div class="bl-content">
                     <h2> Partenaires </h2>
 
                     <div >
-                        <a href = "http://http://www.com-over.com">{% image '@FELFrontBundle/Resources/public/images/com\'over_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://www.habitat-humanisme.org/">{% image '@FELFrontBundle/Resources/public/images/habitat_humanisme_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "https://www.permigo.com/">{% image '@FELFrontBundle/Resources/public/images/permigo_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://www.rhonealpes.fr/">{% image '@FELFrontBundle/Resources/public/images/rhones_alpes_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://www.radioscoop.com/">{% image '@FELFrontBundle/Resources/public/images/scoop_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://smerra.fr/">{% image '@FELFrontBundle/Resources/public/images/smerra_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "https://www.societegenerale.fr/">{% image '@FELFrontBundle/Resources/public/images/societe_generale_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://www.studelites.com/">{% image '@FELFrontBundle/Resources/public/images/studelites_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://www.lyon.fr">{% image '@FELFrontBundle/Resources/public/images/ville_de_lyon.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://woodstower.com/">{% image '@FELFrontBundle/Resources/public/images/woodstower_final.png' %}<img class="row" src="{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://www.pathe.fr/">{% image '@FELFrontBundle/Resources/public/images/pathe_final.png' %}<img class="row" src = "{{ asset_url }}">{% endimage %}</a>
-                        <a href = "http://megazonelyon.com/">{% image '@FELFrontBundle/Resources/public/images/megazone_final.png' %}<img class="row" src = "{{ asset_url }}">{% endimage %}</a>
+                        <a href = "http://http://www.com-over.com">{% image '@FELFrontBundle/Resources/public/images/com\'over_final.png' %}<img class="row" src="{{ asset_url }}" alt="com'over">{% endimage %}</a>
+                        <a href = "http://www.habitat-humanisme.org/">{% image '@FELFrontBundle/Resources/public/images/habitat_humanisme_final.png' %}<img class="row" src="{{ asset_url }}" alt="habitat humanisme">{% endimage %}</a>
+                        <a href = "https://www.permigo.com/">{% image '@FELFrontBundle/Resources/public/images/permigo_final.png' %}<img class="row" src="{{ asset_url }}" alt="permigo">{% endimage %}</a>
+                        <a href = "http://www.rhonealpes.fr/">{% image '@FELFrontBundle/Resources/public/images/rhones_alpes_final.png' %}<img class="row" src="{{ asset_url }}" alt="Rhônes-Alpes">{% endimage %}</a>
+                        <a href = "http://www.radioscoop.com/">{% image '@FELFrontBundle/Resources/public/images/scoop_final.png' %}<img class="row" src="{{ asset_url }}" alt="Scoop">{% endimage %}</a>
+                        <a href = "http://smerra.fr/">{% image '@FELFrontBundle/Resources/public/images/smerra_final.png' %}<img class="row" src="{{ asset_url }}" alt="Smerra">{% endimage %}</a>
+                        <a href = "https://www.societegenerale.fr/">{% image '@FELFrontBundle/Resources/public/images/societe_generale_final.png' %}<img class="row" src="{{ asset_url }}" alt="Société Générale">{% endimage %}</a>
+                        <a href = "http://www.studelites.com/">{% image '@FELFrontBundle/Resources/public/images/studelites_final.png' %}<img class="row" src="{{ asset_url }}" alt="Studélites">{% endimage %}</a>
+                        <a href = "http://www.lyon.fr">{% image '@FELFrontBundle/Resources/public/images/ville_de_lyon.png' %}<img class="row" src="{{ asset_url }}" alt="Ville de Lyon">{% endimage %}</a>
+                        <a href = "http://woodstower.com/">{% image '@FELFrontBundle/Resources/public/images/woodstower_final.png' %}<img class="row" src="{{ asset_url }}" alt="Woodstower">{% endimage %}</a>
+                        <a href = "http://www.pathe.fr/">{% image '@FELFrontBundle/Resources/public/images/pathe_final.png' %}<img class="row" src = "{{ asset_url }}" alt="Pathe">{% endimage %}</a>
+                        <a href = "http://megazonelyon.com/">{% image '@FELFrontBundle/Resources/public/images/megazone_final.png' %}<img class="row" src = "{{ asset_url }}" alt="Mégazone">{% endimage %}</a>
                     </div>
                 </div>
                 <span class="bl-icon bl-icon-close"></span>
@@ -328,7 +328,7 @@
                         OGSE a pour but de d&eacutevelopper et faire vivre la vie &eacutetudiante au sein du centre EUGINOV (centre de formation de l&#039IAE Lyon) en favorisant les rapports entre les &eacutetudiants par l&#039organisation d&#039&eacutev&#232nements. Son objectif est &eacutegalement d&#039int&eacutegrer et d&#039accompagner les &eacutetudiants tout au long de leur cursus.<br/>
                         L&#039association permet aux &eacutetudiants de ces formations de r&eacutealiser des projets de groupe que nomm&eacutes &laquo Missions IVP &raquo (Insertion dans la vie professionnelle). Ces missions font partie int&eacutegrante des formations car les d&eacutemarches et comp&eacutetences mises en oeuvre sont tuteur&eacutees par les enseignants du centre EUGINOV.<br/>
 
-                        <br/><table border="1" style="width:100%">
+                        <br/><table border="1">
                             <tr>
                                 <td>Professionels</td>
                                 <td>Attractif</td>
@@ -453,11 +453,11 @@
     <a id="adherent" role="button" href="{{ path('fel_admin_homepage') }}">Accès Adhérent > </a>
 </div>
 <div>
-    {# <a id="twitter" href="#infos"><img src="images/logos.png"></a> #}
+    {# <a id="twitter" href="#infos"><img src="images/logos.png" alt="Twitter"></a> #}
 </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="{{ asset('bundles/felfront/js/boxlayout.js') }}"></script>
+    <script src="{{ asset('bundles/felfront/js/boxlayout.min.js') }}"></script>
     <script>
         $(function() {
             Boxlayout.init();
