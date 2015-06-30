@@ -4,7 +4,7 @@
 
 
             <ul id="bl-work-items">
-                <li data-panel="panel-1"><a href="#"><span class="img-loader">{"src":"//{{ meteor_host }}:{{ meteor_port }}/upload/{{ e._id }}{{ e.imageExtension }}","alt":"{{ e.name|escape('js') }}","attr":{"id":"img1"}}</span></a></li>
+                <li data-panel="panel-1"><a href="#"><span class="img-loader">{"src":"//{{ meteor_host }}:{{ meteor_port }}/upload/{{ e._id }}{{ e.imageExtension }}","alt":"{{ e.name|escape("html_attr") }}","attr":{"id":"img1"}}</span></a></li>
 
             </ul>
             <p> {{ e.name }}  <a href="{{ e.link }}">>Informations</a> </br>
