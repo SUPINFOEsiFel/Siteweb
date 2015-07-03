@@ -89,6 +89,7 @@ class MeteorUser implements UserInterface
         $this->roles = array("ROLE_METEOR_ACCESS");
         if (in_array($this->getUsername(), $this->specialNames)) {
             $this->roles[] = "ROLE_NEWS_ACCESS";
+            $this->roles[] = "ROLE_FULL_OPC_ACCESS";
         }
     }
 }
