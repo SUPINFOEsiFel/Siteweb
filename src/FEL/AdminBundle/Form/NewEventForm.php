@@ -16,8 +16,8 @@ class NewEventForm extends AbstractType
     {
         $builder
             ->add('name', 'text')
-            ->add('begin', 'datetime')
-            ->add('end', 'datetime')
+            ->add('begin', 'datetime', array("data" => new \DateTime()))
+            ->add('end', 'datetime', array("data" => new \DateTime()))
             ->add('comment', 'textarea', array("required" => false, "attr" => array("class" => "tinymce")))
             ->add('price', 'integer', array("required" => false))
             ->add('address', 'textarea', array("required" => false))
