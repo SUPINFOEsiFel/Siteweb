@@ -71,7 +71,7 @@ class DefaultController extends Controller
         );
 
         if ($auth["status"] == "success") {
-            $user = new MeteorUser($username, $auth["data"]["userId"], $auth["data"]["authToken"]);
+            $user = new MeteorUser($username, $auth["data"]["userId"], $auth["data"]["authToken"], null, $this->container->getParameter("special_users"));
         } else {
             $user = false;
         }
