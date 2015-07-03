@@ -18,14 +18,14 @@ class NewEventForm extends AbstractType
             ->add('name', 'text')
             ->add('begin', 'datetime', array("data" => new \DateTime()))
             ->add('end', 'datetime', array("data" => new \DateTime()))
-            ->add('comment', 'textarea', array("required" => false, "attr" => array("class" => "tinymce")))
-            ->add('price', 'integer', array("required" => false))
-            ->add('address', 'textarea', array("required" => false))
-            ->add('zipCode', 'integer', array("required" => false))
-            ->add('city', 'text', array("required" => false))
+            ->add('comment', 'textarea', array("attr" => array("class" => "tinymce")))
+            ->add('price', 'integer')
+            ->add('address', 'textarea')
+            ->add('zipCode', 'integer')
+            ->add('city', 'text')
             ->add('country', 'text', array("required" => false))
             ->add('link', 'url', array("required" => false))
-			->add('image', 'file', array("required" => false));
+			->add('image', 'file');
     }
 
     /**

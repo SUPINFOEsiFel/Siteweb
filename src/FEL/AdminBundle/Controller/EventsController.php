@@ -50,10 +50,14 @@ class EventsController extends Controller
 
         if ($form->isValid()) {
 			$data = $form->getData();
-			$img = sprintf("data:%s;base64,%s", $data["image"]->getClientMimeType(), base64_encode(file_get_contents($data["image"]->getPathname())));
-			$data["image"] = $img;
-            $json = $this->get("meteor.browser")->post("event/", $data);
+            if($data["image"] !== null) {
+                $img = sprintf("data:%s;base64,%s", $data["image"]->getClientMimeType(), base64_encode(file_get_contents($data["image"]->getPathname())));
+                $data["image"] = $img;
+            }else{
+                unset($data["image"]);
+            }
 
+            $json = $this->get("meteor.browser")->post("event/", $data);
             if ($json["status"] == "fail") {
                 return array(
                     'form' => $form->createView(),
