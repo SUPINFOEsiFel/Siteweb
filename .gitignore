@@ -88,6 +88,7 @@ crashlytics-build.properties
 /web/css/
 /web/js/
 /web/lib/
+/web/images/
 
 # PHPUnit
 /app/phpunit.xml
