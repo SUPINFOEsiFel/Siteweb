@@ -2,6 +2,7 @@
 
 namespace FEL\AdminBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -41,6 +42,7 @@ class OpeContactController extends Controller
      * @Route("/", name="opecontact_create")
      * @Method("POST")
      * @Template("FELAdminBundle:OpeContact:new.html.twig")
+     * @Security("is_granted('ROLE_FULL_OPC_ACCESS')")
      */
     public function createAction(Request $request)
     {
@@ -87,6 +89,7 @@ class OpeContactController extends Controller
      * @Route("/new", name="opecontact_new")
      * @Method("GET")
      * @Template()
+     * @Security("is_granted('ROLE_FULL_OPC_ACCESS')")
      */
     public function newAction()
     {
@@ -130,6 +133,7 @@ class OpeContactController extends Controller
      * @Route("/{id}/edit", name="opecontact_edit")
      * @Method("GET")
      * @Template()
+     * @Security("is_granted('ROLE_FULL_OPC_ACCESS')")
      */
     public function editAction($id)
     {
@@ -175,6 +179,7 @@ class OpeContactController extends Controller
      * @Route("/{id}", name="opecontact_update")
      * @Method("PUT")
      * @Template("FELAdminBundle:OpeContact:edit.html.twig")
+     * @Security("is_granted('ROLE_FULL_OPC_ACCESS')")
      */
     public function updateAction(Request $request, $id)
     {
@@ -207,6 +212,7 @@ class OpeContactController extends Controller
      *
      * @Route("/{id}", name="opecontact_delete")
      * @Method("DELETE")
+     * @Security("is_granted('ROLE_FULL_OPC_ACCESS')")
      */
     public function deleteAction(Request $request, $id)
     {

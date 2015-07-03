@@ -79,12 +79,16 @@
                     Back to the list
                 </a>
             </li>
+            {% if is_granted('ROLE_FULL_OPC_ACCESS') %}
             <li>
                 <a href="{{ path('opecontact_edit', { 'id': entity.id }) }}">
                     Edit
                 </a>
             </li>
+            {% endif %}
+            {% if is_granted('ROLE_FULL_OPC_ACCESS') %}
             <li>{{ form(delete_form) }}</li>
+            {% endif %}
         </ul>
-    <section>
+    </section>
 {% endblock %}

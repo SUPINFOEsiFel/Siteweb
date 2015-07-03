@@ -66,9 +66,11 @@
                         <li>
                             <a href="{{ path('opecontact_show', { 'id': entity.id }) }}">show</a>
                         </li>
+                        {% if is_granted('ROLE_FULL_OPC_ACCESS') %}
                         <li>
                             <a href="{{ path('opecontact_edit', { 'id': entity.id }) }}">edit</a>
                         </li>
+                        {% endif %}
                     </ul>
                     </td>
                 </tr>
@@ -77,11 +79,13 @@
         </table>
 
         <ul>
+            {% if is_granted('ROLE_FULL_OPC_ACCESS') %}
             <li>
                 <a href="{{ path('opecontact_new') }}">
                     Create a new entry
                 </a>
             </li>
+            {% endif %}
         </ul>
     <section>
     {% endblock %}

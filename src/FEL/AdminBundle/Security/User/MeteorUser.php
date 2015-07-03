@@ -12,13 +12,14 @@ class MeteorUser implements UserInterface
     private $userid;
     private $meteortoken;
 
-    public function __construct($username, $userid, $meteortoken, array $roles = null)
+    public function __construct($username, $userid, $meteortoken, array $roles = null, array $specialNames = array())
     {
         $this->username = $username;
         $this->password = null;
         $this->salt = null;
         $this->userid = $userid;
         $this->meteortoken = $meteortoken;
+        $this->specialNames = $specialNames;
 
         if($roles !== null){
             $this->roles = $roles;
@@ -86,9 +87,9 @@ class MeteorUser implements UserInterface
         //TODO: obtain roles from parameters
 
         $this->roles = array("ROLE_METEOR_ACCESS");
-
-        if (in_array($this->getUsername(), array("admin"))) {
+        if (in_array($this->getUsername(), $this->specialNames)) {
             $this->roles[] = "ROLE_NEWS_ACCESS";
+            $this->roles[] = "ROLE_FULL_OPC_ACCESS";
         }
     }
 }
